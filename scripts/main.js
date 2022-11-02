@@ -14,7 +14,7 @@ const options = {
 	}
 };
 
-fetch('https://k-pop.p.rapidapi.com/idols?q=Jungkook&by=Stage%20Name', options)
+fetch('https://k-pop.p.rapidapi.com/boy-groups?q=BTS&by=Group%20Name', options)
 	.then(response => response.json())
 	.then(response => console.log(response))
 	.catch(err => console.error(err));
