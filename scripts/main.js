@@ -1,11 +1,9 @@
-// Our bundler automatically creates styling when imported in the main JS file!
 import '../styles/style.css'
-
-// We can use node_modules directely in the browser!
 import * as d3 from 'd3';
 
 console.log('Hello, world!');
 
+// Spotify API
 const options = {
 	method: 'GET',
 	headers: {
@@ -26,4 +24,5 @@ fetch('https://spotify23.p.rapidapi.com/artist_overview/?id=3Nrfpe0tUJi4K4DXYWgM
 	.then(response => console.log(response))
 	.catch(err => console.error(err));
 
+// BTS ID: 3Nrfpe0tUJi4K4DXYWgMUX
 

@@ -1,0 +1,985 @@
+{
+  "data": {
+    "artist": {
+      "discography": {
+        "albums": {
+          "totalCount": 21,
+          "items": [
+            {
+              "releases": {
+                "items": [
+                  {
+                    "id": "6al2VdKbb6FIz9d7lU7WRB",
+                    "uri": "spotify:album:6al2VdKbb6FIz9d7lU7WRB",
+                    "name": "Proof",
+                    "type": "ALBUM",
+                    "date": {
+                      "year": 2022,
+                      "isoString": "2022-06-10T00:00:00Z"
+                    },
+                    "coverArt": {
+                      "sources": [
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d00001e0217db30ce3f081d6818a8ad49",
+                          "width": 300,
+                          "height": 300
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d0000485117db30ce3f081d6818a8ad49",
+                          "width": 64,
+                          "height": 64
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d0000b27317db30ce3f081d6818a8ad49",
+                          "width": 640,
+                          "height": 640
+                        }
+                      ]
+                    },
+                    "playability": {
+                      "playable": true,
+                      "reason": "PLAYABLE"
+                    },
+                    "sharingInfo": {
+                      "shareId": "xlizuHvITTee2IGXcQdeRg",
+                      "shareUrl": "https://open.spotify.com/album/6al2VdKbb6FIz9d7lU7WRB?si=xlizuHvITTee2IGXcQdeRg"
+                    },
+                    "tracks": {
+                      "totalCount": 35
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "releases": {
+                "items": [
+                  {
+                    "id": "6nYfHQnvkvOTNHnOhDT3sr",
+                    "uri": "spotify:album:6nYfHQnvkvOTNHnOhDT3sr",
+                    "name": "BE",
+                    "type": "ALBUM",
+                    "date": {
+                      "year": 2020,
+                      "isoString": "2020-11-20T00:00:00Z"
+                    },
+                    "coverArt": {
+                      "sources": [
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d00001e02c07d5d2fdc02ae252fcd07e5",
+                          "width": 300,
+                          "height": 300
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d00004851c07d5d2fdc02ae252fcd07e5",
+                          "width": 64,
+                          "height": 64
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d0000b273c07d5d2fdc02ae252fcd07e5",
+                          "width": 640,
+                          "height": 640
+                        }
+                      ]
+                    },
+                    "playability": {
+                      "playable": true,
+                      "reason": "PLAYABLE"
+                    },
+                    "sharingInfo": {
+                      "shareId": "wVk3SbNYTzO-iL0-xfW0qg",
+                      "shareUrl": "https://open.spotify.com/album/6nYfHQnvkvOTNHnOhDT3sr?si=wVk3SbNYTzO-iL0-xfW0qg"
+                    },
+                    "tracks": {
+                      "totalCount": 8
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "releases": {
+                "items": [
+                  {
+                    "id": "1nScVw87kRJiT2bg2Kswhp",
+                    "uri": "spotify:album:1nScVw87kRJiT2bg2Kswhp",
+                    "name": "MAP OF THE SOUL : 7 ~ THE JOURNEY ~",
+                    "type": "ALBUM",
+                    "date": {
+                      "year": 2020,
+                      "isoString": "2020-07-14T00:00:00Z"
+                    },
+                    "coverArt": {
+                      "sources": [
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d00001e02da9c76ed020a7894443a3f97",
+                          "width": 300,
+                          "height": 300
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d00004851da9c76ed020a7894443a3f97",
+                          "width": 64,
+                          "height": 64
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d0000b273da9c76ed020a7894443a3f97",
+                          "width": 640,
+                          "height": 640
+                        }
+                      ]
+                    },
+                    "playability": {
+                      "playable": true,
+                      "reason": "PLAYABLE"
+                    },
+                    "sharingInfo": {
+                      "shareId": "2I4Dlgc6TLOU7VFBGMhnrA",
+                      "shareUrl": "https://open.spotify.com/album/1nScVw87kRJiT2bg2Kswhp?si=2I4Dlgc6TLOU7VFBGMhnrA"
+                    },
+                    "tracks": {
+                      "totalCount": 13
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "releases": {
+                "items": [
+                  {
+                    "id": "5W1XY5ucNATjTULERvXx9j",
+                    "uri": "spotify:album:5W1XY5ucNATjTULERvXx9j",
+                    "name": "MAP OF THE SOUL : 7",
+                    "type": "ALBUM",
+                    "date": {
+                      "year": 2020,
+                      "isoString": "2020-02-21T00:00:00Z"
+                    },
+                    "coverArt": {
+                      "sources": [
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d00001e02505190077497c230422f2934",
+                          "width": 300,
+                          "height": 300
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d00004851505190077497c230422f2934",
+                          "width": 64,
+                          "height": 64
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d0000b273505190077497c230422f2934",
+                          "width": 640,
+                          "height": 640
+                        }
+                      ]
+                    },
+                    "playability": {
+                      "playable": true,
+                      "reason": "PLAYABLE"
+                    },
+                    "sharingInfo": {
+                      "shareId": "Gz76vP6_QRuzYoEHpGbQ8Q",
+                      "shareUrl": "https://open.spotify.com/album/5W1XY5ucNATjTULERvXx9j?si=Gz76vP6_QRuzYoEHpGbQ8Q"
+                    },
+                    "tracks": {
+                      "totalCount": 20
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "releases": {
+                "items": [
+                  {
+                    "id": "2KqlAl1Kl5fZvbFgJ0qFB6",
+                    "uri": "spotify:album:2KqlAl1Kl5fZvbFgJ0qFB6",
+                    "name": "MAP OF THE SOUL : PERSONA",
+                    "type": "ALBUM",
+                    "date": {
+                      "year": 2019,
+                      "isoString": "2019-04-12T00:00:00Z"
+                    },
+                    "coverArt": {
+                      "sources": [
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d00001e0218d0ed4f969b376893f9a38f",
+                          "width": 300,
+                          "height": 300
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d0000485118d0ed4f969b376893f9a38f",
+                          "width": 64,
+                          "height": 64
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d0000b27318d0ed4f969b376893f9a38f",
+                          "width": 640,
+                          "height": 640
+                        }
+                      ]
+                    },
+                    "playability": {
+                      "playable": true,
+                      "reason": "PLAYABLE"
+                    },
+                    "sharingInfo": {
+                      "shareId": "u9ubbTLXTKKjLZFsiNyi4Q",
+                      "shareUrl": "https://open.spotify.com/album/2KqlAl1Kl5fZvbFgJ0qFB6?si=u9ubbTLXTKKjLZFsiNyi4Q"
+                    },
+                    "tracks": {
+                      "totalCount": 7
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "releases": {
+                "items": [
+                  {
+                    "id": "43wFM1HquliY3iwKWzPN4y",
+                    "uri": "spotify:album:43wFM1HquliY3iwKWzPN4y",
+                    "name": "Love Yourself 結 'Answer'",
+                    "type": "ALBUM",
+                    "date": {
+                      "year": 2018,
+                      "isoString": "2018-08-24T00:00:00Z"
+                    },
+                    "coverArt": {
+                      "sources": [
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d00001e023825e6d4d02e4b4c0cec7e1d",
+                          "width": 300,
+                          "height": 300
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d000048513825e6d4d02e4b4c0cec7e1d",
+                          "width": 64,
+                          "height": 64
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d0000b2733825e6d4d02e4b4c0cec7e1d",
+                          "width": 640,
+                          "height": 640
+                        }
+                      ]
+                    },
+                    "playability": {
+                      "playable": true,
+                      "reason": "PLAYABLE"
+                    },
+                    "sharingInfo": {
+                      "shareId": "8gklptnhQA62pQI7Y4Mmgg",
+                      "shareUrl": "https://open.spotify.com/album/43wFM1HquliY3iwKWzPN4y?si=8gklptnhQA62pQI7Y4Mmgg"
+                    },
+                    "tracks": {
+                      "totalCount": 26
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "releases": {
+                "items": [
+                  {
+                    "id": "4NIqCxqP9o8Tp6tGLBqd8O",
+                    "uri": "spotify:album:4NIqCxqP9o8Tp6tGLBqd8O",
+                    "name": "Love Yourself 轉 'Tear'",
+                    "type": "ALBUM",
+                    "date": {
+                      "year": 2018,
+                      "isoString": "2018-05-18T00:00:00Z"
+                    },
+                    "coverArt": {
+                      "sources": [
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d00001e028fbcf6544ff02a8959a81781",
+                          "width": 300,
+                          "height": 300
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d000048518fbcf6544ff02a8959a81781",
+                          "width": 64,
+                          "height": 64
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d0000b2738fbcf6544ff02a8959a81781",
+                          "width": 640,
+                          "height": 640
+                        }
+                      ]
+                    },
+                    "playability": {
+                      "playable": true,
+                      "reason": "PLAYABLE"
+                    },
+                    "sharingInfo": {
+                      "shareId": "EimbhBDSQ3W8kxmzWR7pOg",
+                      "shareUrl": "https://open.spotify.com/album/4NIqCxqP9o8Tp6tGLBqd8O?si=EimbhBDSQ3W8kxmzWR7pOg"
+                    },
+                    "tracks": {
+                      "totalCount": 11
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "releases": {
+                "items": [
+                  {
+                    "id": "66J1OXSaS3hBZASOV3el8t",
+                    "uri": "spotify:album:66J1OXSaS3hBZASOV3el8t",
+                    "name": "FACE YOURSELF",
+                    "type": "ALBUM",
+                    "date": {
+                      "year": 2018,
+                      "isoString": "2018-04-04T00:00:00Z"
+                    },
+                    "coverArt": {
+                      "sources": [
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d00001e027df155730d4d753560ec28a5",
+                          "width": 300,
+                          "height": 300
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d000048517df155730d4d753560ec28a5",
+                          "width": 64,
+                          "height": 64
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d0000b2737df155730d4d753560ec28a5",
+                          "width": 640,
+                          "height": 640
+                        }
+                      ]
+                    },
+                    "playability": {
+                      "playable": true,
+                      "reason": "PLAYABLE"
+                    },
+                    "sharingInfo": {
+                      "shareId": "6ofHv3yWQRylKnGFPE61Hw",
+                      "shareUrl": "https://open.spotify.com/album/66J1OXSaS3hBZASOV3el8t?si=6ofHv3yWQRylKnGFPE61Hw"
+                    },
+                    "tracks": {
+                      "totalCount": 12
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "releases": {
+                "items": [
+                  {
+                    "id": "07Rq17GzCnIdWJcyVHb57G",
+                    "uri": "spotify:album:07Rq17GzCnIdWJcyVHb57G",
+                    "name": "Love Yourself 承 'Her'",
+                    "type": "ALBUM",
+                    "date": {
+                      "year": 2017,
+                      "isoString": "2017-09-18T00:00:00Z"
+                    },
+                    "coverArt": {
+                      "sources": [
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d00001e02829305487c8f3b96a1d955b3",
+                          "width": 300,
+                          "height": 300
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d00004851829305487c8f3b96a1d955b3",
+                          "width": 64,
+                          "height": 64
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d0000b273829305487c8f3b96a1d955b3",
+                          "width": 640,
+                          "height": 640
+                        }
+                      ]
+                    },
+                    "playability": {
+                      "playable": true,
+                      "reason": "PLAYABLE"
+                    },
+                    "sharingInfo": {
+                      "shareId": "zJsABg8AQe-hWaVMFz2AOQ",
+                      "shareUrl": "https://open.spotify.com/album/07Rq17GzCnIdWJcyVHb57G?si=zJsABg8AQe-hWaVMFz2AOQ"
+                    },
+                    "tracks": {
+                      "totalCount": 9
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "releases": {
+                "items": [
+                  {
+                    "id": "6THpewjqJ15ORBJkh5CEYb",
+                    "uri": "spotify:album:6THpewjqJ15ORBJkh5CEYb",
+                    "name": "You Never Walk Alone",
+                    "type": "ALBUM",
+                    "date": {
+                      "year": 2017,
+                      "isoString": "2017-02-13T00:00:00Z"
+                    },
+                    "coverArt": {
+                      "sources": [
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d00001e021fd0a8fc28b2a0a5d9cdc6c6",
+                          "width": 300,
+                          "height": 300
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d000048511fd0a8fc28b2a0a5d9cdc6c6",
+                          "width": 64,
+                          "height": 64
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d0000b2731fd0a8fc28b2a0a5d9cdc6c6",
+                          "width": 640,
+                          "height": 640
+                        }
+                      ]
+                    },
+                    "playability": {
+                      "playable": true,
+                      "reason": "PLAYABLE"
+                    },
+                    "sharingInfo": {
+                      "shareId": "9XGVD92UR6WJeOKkco5juw",
+                      "shareUrl": "https://open.spotify.com/album/6THpewjqJ15ORBJkh5CEYb?si=9XGVD92UR6WJeOKkco5juw"
+                    },
+                    "tracks": {
+                      "totalCount": 18
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "releases": {
+                "items": [
+                  {
+                    "id": "1vhNGBTFoaSTLbHjPGFIlF",
+                    "uri": "spotify:album:1vhNGBTFoaSTLbHjPGFIlF",
+                    "name": "Wings",
+                    "type": "ALBUM",
+                    "date": {
+                      "year": 2016,
+                      "isoString": "2016-10-10T00:00:00Z"
+                    },
+                    "coverArt": {
+                      "sources": [
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d00001e028bd5d941f9ced8e7f9c60dd4",
+                          "width": 300,
+                          "height": 300
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d000048518bd5d941f9ced8e7f9c60dd4",
+                          "width": 64,
+                          "height": 64
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d0000b2738bd5d941f9ced8e7f9c60dd4",
+                          "width": 640,
+                          "height": 640
+                        }
+                      ]
+                    },
+                    "playability": {
+                      "playable": true,
+                      "reason": "PLAYABLE"
+                    },
+                    "sharingInfo": {
+                      "shareId": "A0r1EiDeSMmwzDz4xX8BfQ",
+                      "shareUrl": "https://open.spotify.com/album/1vhNGBTFoaSTLbHjPGFIlF?si=A0r1EiDeSMmwzDz4xX8BfQ"
+                    },
+                    "tracks": {
+                      "totalCount": 15
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "releases": {
+                "items": [
+                  {
+                    "id": "442zUwKHCTO47XPF7cUSqY",
+                    "uri": "spotify:album:442zUwKHCTO47XPF7cUSqY",
+                    "name": "Youth",
+                    "type": "ALBUM",
+                    "date": {
+                      "year": 2016,
+                      "isoString": "2016-09-07T00:00:00Z"
+                    },
+                    "coverArt": {
+                      "sources": [
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d00001e029db43b5fb2b278d7f70a6cf9",
+                          "width": 300,
+                          "height": 300
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d000048519db43b5fb2b278d7f70a6cf9",
+                          "width": 64,
+                          "height": 64
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d0000b2739db43b5fb2b278d7f70a6cf9",
+                          "width": 640,
+                          "height": 640
+                        }
+                      ]
+                    },
+                    "playability": {
+                      "playable": true,
+                      "reason": "PLAYABLE"
+                    },
+                    "sharingInfo": {
+                      "shareId": "f_pCSaPgRhuQGYmJiZnb5Q",
+                      "shareUrl": "https://open.spotify.com/album/442zUwKHCTO47XPF7cUSqY?si=f_pCSaPgRhuQGYmJiZnb5Q"
+                    },
+                    "tracks": {
+                      "totalCount": 13
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "releases": {
+                "items": [
+                  {
+                    "id": "1k5bJ8l5oL5xxVBVHjil09",
+                    "uri": "spotify:album:1k5bJ8l5oL5xxVBVHjil09",
+                    "name": "The Most Beautiful Moment in Life: Young Forever",
+                    "type": "ALBUM",
+                    "date": {
+                      "year": 2016,
+                      "isoString": "2016-05-02T00:00:00Z"
+                    },
+                    "coverArt": {
+                      "sources": [
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d00001e02c6dbc63cf145b4ff6bee3322",
+                          "width": 300,
+                          "height": 300
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d00004851c6dbc63cf145b4ff6bee3322",
+                          "width": 64,
+                          "height": 64
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d0000b273c6dbc63cf145b4ff6bee3322",
+                          "width": 640,
+                          "height": 640
+                        }
+                      ]
+                    },
+                    "playability": {
+                      "playable": true,
+                      "reason": "PLAYABLE"
+                    },
+                    "sharingInfo": {
+                      "shareId": "LHW5mHhTTeK8vhErpFcgUQ",
+                      "shareUrl": "https://open.spotify.com/album/1k5bJ8l5oL5xxVBVHjil09?si=LHW5mHhTTeK8vhErpFcgUQ"
+                    },
+                    "tracks": {
+                      "totalCount": 23
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "releases": {
+                "items": [
+                  {
+                    "id": "2ds8iT4wkaN1Q1gZe1qcOD",
+                    "uri": "spotify:album:2ds8iT4wkaN1Q1gZe1qcOD",
+                    "name": "The Most Beautiful Moment in Life Pt.2",
+                    "type": "ALBUM",
+                    "date": {
+                      "year": 2015,
+                      "isoString": "2015-11-30T00:00:00Z"
+                    },
+                    "coverArt": {
+                      "sources": [
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d00001e02a5e9b18ada0905fa82cd4756",
+                          "width": 300,
+                          "height": 300
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d00004851a5e9b18ada0905fa82cd4756",
+                          "width": 64,
+                          "height": 64
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d0000b273a5e9b18ada0905fa82cd4756",
+                          "width": 640,
+                          "height": 640
+                        }
+                      ]
+                    },
+                    "playability": {
+                      "playable": true,
+                      "reason": "PLAYABLE"
+                    },
+                    "sharingInfo": {
+                      "shareId": "t4Hpc-ysSfCaYE4lHpjKYQ",
+                      "shareUrl": "https://open.spotify.com/album/2ds8iT4wkaN1Q1gZe1qcOD?si=t4Hpc-ysSfCaYE4lHpjKYQ"
+                    },
+                    "tracks": {
+                      "totalCount": 9
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "releases": {
+                "items": [
+                  {
+                    "id": "0mEeCuKJQ8Xh9tQ5dMm89X",
+                    "uri": "spotify:album:0mEeCuKJQ8Xh9tQ5dMm89X",
+                    "name": "The Most Beautiful Moment in Life Pt.1",
+                    "type": "ALBUM",
+                    "date": {
+                      "year": 2015,
+                      "isoString": "2015-04-29T00:00:00Z"
+                    },
+                    "coverArt": {
+                      "sources": [
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d00001e021504edb7a9a5e4e64547fb94",
+                          "width": 300,
+                          "height": 300
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d000048511504edb7a9a5e4e64547fb94",
+                          "width": 64,
+                          "height": 64
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d0000b2731504edb7a9a5e4e64547fb94",
+                          "width": 640,
+                          "height": 640
+                        }
+                      ]
+                    },
+                    "playability": {
+                      "playable": true,
+                      "reason": "PLAYABLE"
+                    },
+                    "sharingInfo": {
+                      "shareId": "oxx1zTvpTJqoTSAbU_VENQ",
+                      "shareUrl": "https://open.spotify.com/album/0mEeCuKJQ8Xh9tQ5dMm89X?si=oxx1zTvpTJqoTSAbU_VENQ"
+                    },
+                    "tracks": {
+                      "totalCount": 9
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "releases": {
+                "items": [
+                  {
+                    "id": "2bXp5bEM5sgZdIznTesQZb",
+                    "uri": "spotify:album:2bXp5bEM5sgZdIznTesQZb",
+                    "name": "Wake Up (Standard Edition)",
+                    "type": "ALBUM",
+                    "date": {
+                      "year": 2014,
+                      "isoString": "2014-12-24T00:00:00Z"
+                    },
+                    "coverArt": {
+                      "sources": [
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d00001e021bfda04c5a3714b6225e4ddc",
+                          "width": 300,
+                          "height": 300
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d000048511bfda04c5a3714b6225e4ddc",
+                          "width": 64,
+                          "height": 64
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d0000b2731bfda04c5a3714b6225e4ddc",
+                          "width": 640,
+                          "height": 640
+                        }
+                      ]
+                    },
+                    "playability": {
+                      "playable": true,
+                      "reason": "PLAYABLE"
+                    },
+                    "sharingInfo": {
+                      "shareId": "0Td8DMAYQwO-Xuu9X-VQwg",
+                      "shareUrl": "https://open.spotify.com/album/2bXp5bEM5sgZdIznTesQZb?si=0Td8DMAYQwO-Xuu9X-VQwg"
+                    },
+                    "tracks": {
+                      "totalCount": 13
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "releases": {
+                "items": [
+                  {
+                    "id": "35voVqYGkotyJ945O9egDY",
+                    "uri": "spotify:album:35voVqYGkotyJ945O9egDY",
+                    "name": "Dark & Wild",
+                    "type": "ALBUM",
+                    "date": {
+                      "year": 2014,
+                      "isoString": "2014-08-20T00:00:00Z"
+                    },
+                    "coverArt": {
+                      "sources": [
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d00001e02abe7090bc3ae94d741dfaf6b",
+                          "width": 300,
+                          "height": 300
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d00004851abe7090bc3ae94d741dfaf6b",
+                          "width": 64,
+                          "height": 64
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d0000b273abe7090bc3ae94d741dfaf6b",
+                          "width": 640,
+                          "height": 640
+                        }
+                      ]
+                    },
+                    "playability": {
+                      "playable": true,
+                      "reason": "PLAYABLE"
+                    },
+                    "sharingInfo": {
+                      "shareId": "RKPU2v7JThi9zTsjnprk_A",
+                      "shareUrl": "https://open.spotify.com/album/35voVqYGkotyJ945O9egDY?si=RKPU2v7JThi9zTsjnprk_A"
+                    },
+                    "tracks": {
+                      "totalCount": 14
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "releases": {
+                "items": [
+                  {
+                    "id": "0pX41mddl0CZXxpxkQ7347",
+                    "uri": "spotify:album:0pX41mddl0CZXxpxkQ7347",
+                    "name": "Skool Luv Affair (Special Addition)",
+                    "type": "ALBUM",
+                    "date": {
+                      "year": 2014,
+                      "isoString": "2014-05-14T00:00:00Z"
+                    },
+                    "coverArt": {
+                      "sources": [
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d00001e027fc4a9420eb2ca3aceafa88b",
+                          "width": 300,
+                          "height": 300
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d000048517fc4a9420eb2ca3aceafa88b",
+                          "width": 64,
+                          "height": 64
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d0000b2737fc4a9420eb2ca3aceafa88b",
+                          "width": 640,
+                          "height": 640
+                        }
+                      ]
+                    },
+                    "playability": {
+                      "playable": true,
+                      "reason": "PLAYABLE"
+                    },
+                    "sharingInfo": {
+                      "shareId": "mY8E36PtTi6wExB08uouGg",
+                      "shareUrl": "https://open.spotify.com/album/0pX41mddl0CZXxpxkQ7347?si=mY8E36PtTi6wExB08uouGg"
+                    },
+                    "tracks": {
+                      "totalCount": 12
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "releases": {
+                "items": [
+                  {
+                    "id": "5r35iS0uSSoQBKzQj0IeI3",
+                    "uri": "spotify:album:5r35iS0uSSoQBKzQj0IeI3",
+                    "name": "Skool Luv Affair",
+                    "type": "ALBUM",
+                    "date": {
+                      "year": 2014,
+                      "isoString": "2014-02-12T00:00:00Z"
+                    },
+                    "coverArt": {
+                      "sources": [
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d00001e02ab9433cc4b9cda9431be879a",
+                          "width": 300,
+                          "height": 300
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d00004851ab9433cc4b9cda9431be879a",
+                          "width": 64,
+                          "height": 64
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d0000b273ab9433cc4b9cda9431be879a",
+                          "width": 640,
+                          "height": 640
+                        }
+                      ]
+                    },
+                    "playability": {
+                      "playable": true,
+                      "reason": "PLAYABLE"
+                    },
+                    "sharingInfo": {
+                      "shareId": "q-BG2DhcSP2KG-pDY5F8SA",
+                      "shareUrl": "https://open.spotify.com/album/5r35iS0uSSoQBKzQj0IeI3?si=q-BG2DhcSP2KG-pDY5F8SA"
+                    },
+                    "tracks": {
+                      "totalCount": 10
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "releases": {
+                "items": [
+                  {
+                    "id": "6rWmdSJIaGTVtdMJQ35Lvf",
+                    "uri": "spotify:album:6rWmdSJIaGTVtdMJQ35Lvf",
+                    "name": "O!RUL8,2?",
+                    "type": "ALBUM",
+                    "date": {
+                      "year": 2013,
+                      "isoString": "2013-09-11T00:00:00Z"
+                    },
+                    "coverArt": {
+                      "sources": [
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d00001e0238a73fb596e530ac18446812",
+                          "width": 300,
+                          "height": 300
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d0000485138a73fb596e530ac18446812",
+                          "width": 64,
+                          "height": 64
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d0000b27338a73fb596e530ac18446812",
+                          "width": 640,
+                          "height": 640
+                        }
+                      ]
+                    },
+                    "playability": {
+                      "playable": true,
+                      "reason": "PLAYABLE"
+                    },
+                    "sharingInfo": {
+                      "shareId": "8EZuJK_KQwW344gcfE_gLw",
+                      "shareUrl": "https://open.spotify.com/album/6rWmdSJIaGTVtdMJQ35Lvf?si=8EZuJK_KQwW344gcfE_gLw"
+                    },
+                    "tracks": {
+                      "totalCount": 10
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "releases": {
+                "items": [
+                  {
+                    "id": "6egaEe9JaULuUCkihSnYlH",
+                    "uri": "spotify:album:6egaEe9JaULuUCkihSnYlH",
+                    "name": "2 Cool 4 Skool",
+                    "type": "ALBUM",
+                    "date": {
+                      "year": 2013,
+                      "isoString": "2013-06-12T00:00:00Z"
+                    },
+                    "coverArt": {
+                      "sources": [
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d00001e022666df197eac73ae823e1e67",
+                          "width": 300,
+                          "height": 300
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d000048512666df197eac73ae823e1e67",
+                          "width": 64,
+                          "height": 64
+                        },
+                        {
+                          "url": "https://i.scdn.co/image/ab67616d0000b2732666df197eac73ae823e1e67",
+                          "width": 640,
+                          "height": 640
+                        }
+                      ]
+                    },
+                    "playability": {
+                      "playable": true,
+                      "reason": "PLAYABLE"
+                    },
+                    "sharingInfo": {
+                      "shareId": "4IKoIXnrQzW2du0BwgLqVw",
+                      "shareUrl": "https://open.spotify.com/album/6egaEe9JaULuUCkihSnYlH?si=4IKoIXnrQzW2du0BwgLqVw"
+                    },
+                    "tracks": {
+                      "totalCount": 7
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "extensions": {
+    "cacheControl": {
+      "version": 1,
+      "hints": []
+    }
+  }
+}
