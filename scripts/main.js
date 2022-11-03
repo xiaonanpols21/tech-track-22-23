@@ -1,28 +1,46 @@
 import '../styles/style.scss'
 import * as d3 from 'd3';
 
-console.log('Hello, world!');
+function getData() {
+	// Spotify API
+	const options = {
+		method: 'GET',
+		headers: {
+			'X-RapidAPI-Key': 'c20e05d39emsh51bf7509082730ep146d0cjsn622276aaec1a',
+			'X-RapidAPI-Host': 'spotify23.p.rapidapi.com'
+		}
+	};
 
-// Spotify API
-const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': 'c20e05d39emsh51bf7509082730ep146d0cjsn622276aaec1a',
-		'X-RapidAPI-Host': 'spotify23.p.rapidapi.com'
-	}
-};
+	// Album
+	fetch('https://spotify23.p.rapidapi.com/artist_albums/?id=3Nrfpe0tUJi4K4DXYWgMUX&offset=0&limit=100', options)
+		.then(response => response.json())
+		.then(response => {
+			console.log(response);
 
-// Album
-fetch('https://spotify23.p.rapidapi.com/artist_albums/?id=3Nrfpe0tUJi4K4DXYWgMUX&offset=0&limit=100', options)
-	.then(response => response.json())
-	.then(response => console.log(response))
-	.catch(err => console.error(err));
+			const newArray = [];
 
-// Overview
-fetch('https://spotify23.p.rapidapi.com/artist_overview/?id=3Nrfpe0tUJi4K4DXYWgMUX', options)
-	.then(response => response.json())
-	.then(response => console.log(response))
-	.catch(err => console.error(err));
+			response.forEach(item => {
+				newArray,push(item["name"]);
+			});
 
-// BTS ID: 3Nrfpe0tUJi4K4DXYWgMUX
+			console.log(newArray);
+		})
 
+		.catch(err => console.error(err));
+
+	// Overview
+	fetch('https://spotify23.p.rapidapi.com/artist_overview/?id=3Nrfpe0tUJi4K4DXYWgMUX', options)
+		.then(response => response.json())
+		.then(response => console.log(response))
+		.catch(err => console.error(err));
+
+	// BTS ID: 3Nrfpe0tUJi4K4DXYWgMUX
+
+	/*
+	const albums = response.map(item => ({
+		name: ["Name"]
+	}));
+	console.log(albums);
+	*/
+}
+getData();
