@@ -16,7 +16,7 @@ For project Tech I am going to make a data visualization about BTS.
 
 In this data visualization you can see the Albums of BTS in order from debut to present.
 
-## How can you use your application?
+## How can you use your data visualization?
 
 Walk through the timeline of the albums or filter on year.
 
