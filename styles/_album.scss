@@ -1,3 +1,8 @@
+main {
+    padding-top: 150px + 50px;
+    @include grid(column, 50px);
+}
+
 article {
     position: relative;
     padding: 30px;

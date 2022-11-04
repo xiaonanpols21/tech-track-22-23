@@ -1,0 +1,21 @@
+nav {
+    position: fixed;
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    bottom: 0;
+    padding: 20px;
+    background-color: $white;
+    box-shadow: inset $shadow-3-6;
+
+    button {
+        @include font18;
+        padding: 10px 20px;
+        background-color: $pink;
+        border: none;
+        border-radius: 10px;
+        font-family: $font-stack;
+        font-weight: bold;
+        color: $white;
+    }
+}

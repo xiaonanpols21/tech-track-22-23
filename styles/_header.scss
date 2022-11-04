@@ -1,9 +1,13 @@
 header {
     @include grid-clmn(90px 1fr, 0px 10px);
+    position: fixed;
+    left: 0;
+    right: 0;
     padding: 30px 20px;
     background-color: $white;
     border-radius: 0px 0px 50px 50px;
     box-shadow: $shadow-3-6;
+    z-index: 1;
 
     h1 {
         @include font34;
