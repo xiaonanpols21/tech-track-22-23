@@ -19,8 +19,8 @@ function getData() {
 
 			const newArray = [];
 
-			response.forEach(item => {
-				newArray,push(item["name"]);
+			response.data.artist.discography.albums.items.forEach(item => {
+				newArray.push(item.releases.items[0]);
 			});
 
 			console.log(newArray);
