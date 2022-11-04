@@ -1,0 +1,13 @@
+$font-stack: 'Lexend', sans-serif;
+
+$pink: #FB879E;
+$blue: #8CC5FC;
+$purple: #D1A6C4;
+
+$black: #2D2638;
+$white: #ffffff;
+
+@mixin font34 {
+    font-size: 34px;
+    line-height: 37px;
+}

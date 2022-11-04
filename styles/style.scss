@@ -1,7 +1,15 @@
 @import "./variables";
+@import "./header";
 @import "./breakpoints";
 
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
 body {
-    background: black;
-    font-family: sans-serif;
+    font-family: $font-stack;
+    background: linear-gradient(311deg, rgba(251,135,158,1) 0%, rgba(140,197,252,1) 100%);
+    background: blue;
 }
