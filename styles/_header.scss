@@ -1,0 +1,42 @@
+header {
+    @include grid-clmn(90px 1fr, 0px 10px);
+    padding: 30px 20px;
+    background-color: $white;
+    border-radius: 0px 0px 50px 50px;
+    box-shadow: $shadow-3-6;
+
+    h1 {
+        @include font34;
+        grid-column-start: 2;
+        grid-row-start: 1;
+    }
+
+    p {
+        @include font16;
+        line-height: 23px;
+        font-weight: bold;
+
+        &:first-of-type {
+            grid-column-start: 2;
+            grid-row-start: 2;
+        }
+
+        &:last-of-type {
+            grid-column-start: 2;
+            grid-row-start: 3;
+        }
+    }
+
+    a {
+        font-weight: 300;
+    }
+
+    img {
+        grid-column-start: 1;
+        grid-row-start: 1;
+        grid-row-end: 4;
+        height: 90px;
+        width: 90px;
+        border-radius: 50%;
+    }
+}

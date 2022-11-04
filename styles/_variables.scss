@@ -7,7 +7,46 @@ $purple: #D1A6C4;
 $black: #2D2638;
 $white: #ffffff;
 
+$background-day: linear-gradient(320deg, rgba(251,135,158,0.2) 0%, rgba(140,197,252,0.2) 100%);
+
+$shadow-3-6: (0 3px 6px rgba($black, .16));
+$shadow-10-10: (0 10px 10px rgba($black, .16));
+
+// Font
+@mixin font42 {
+    font-size: 42px;
+    line-height: 50px;
+}
+
 @mixin font34 {
     font-size: 34px;
     line-height: 37px;
+}
+
+@mixin font34 {
+    font-size: 34px;
+    line-height: 37px;
+}
+
+@mixin font24 {
+    font-size: 24px;
+    line-height: 40px;
+}
+
+@mixin font16 {
+    font-size: 16px;
+    line-height: 28px;
+}
+
+// Grid - flex
+@mixin grid-clmn($tempplate-clmn, $grid-clmn-gap) {
+    display: grid;
+    grid-template-columns: $tempplate-clmn;
+    gap: $grid-clmn-gap;
+}
+
+@mixin grid($direction, $gap) {
+    display: grid;
+    flex-direction: $direction;
+    gap: $gap;
 }

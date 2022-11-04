@@ -1,5 +1,6 @@
 @import "./variables";
 @import "./header";
+@import "./album";
 @import "./breakpoints";
 
 * {
@@ -11,6 +12,13 @@
 body {
     font-family: $font-stack;
     height: 100vh;
-    background: linear-gradient(320deg, rgba(251,135,158,0.2) 0%, rgba(140,197,252,0.2) 100%);
+    background: $background-day;
+}
 
+img {
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
 }
