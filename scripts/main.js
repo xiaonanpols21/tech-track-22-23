@@ -17,13 +17,12 @@ function getData() {
 		.then(response => {
 			console.log(response);
 
-			const newArray = [];
-
+			// Albums
+			const albums = [];
 			response.data.artist.discography.albums.items.forEach(item => {
-				newArray.push(item.releases.items[0]);
+				albums.push(item.releases.items[0]);
 			});
-
-			console.log(newArray);
+			console.log(albums);
 		})
 
 		.catch(err => console.error(err));
@@ -31,16 +30,11 @@ function getData() {
 	// Overview
 	fetch('https://spotify23.p.rapidapi.com/artist_overview/?id=3Nrfpe0tUJi4K4DXYWgMUX', options)
 		.then(response => response.json())
-		.then(response => console.log(response))
+		.then(response => {
+			console.log(response.data.artist.profile.name);
+		})
 		.catch(err => console.error(err));
 
 	// BTS ID: 3Nrfpe0tUJi4K4DXYWgMUX
-
-	/*
-	const albums = response.map(item => ({
-		name: ["Name"]
-	}));
-	console.log(albums);
-	*/
 }
 getData();
