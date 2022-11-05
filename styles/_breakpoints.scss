@@ -4,8 +4,57 @@
 }
 
 // Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
+@media (max-width: 768px) {
+    .arrow {
+        display: none;
+    }
+}
 
+@media (min-width: 768px) {
+    header {
+        @include grid-clmn(138px 1fr, 0px 20px);
+        position: relative;
+        padding: 30px 50px;
+        background-color: transparent;
+        box-shadow: none;
+
+        h1 {
+            @include font50;
+        }
+
+        p {
+            @include font20;
+        }
+
+        img {
+            height: 138px;
+            width: 138px;
+        }
+    }
+
+    main {
+        @include flex(row, 50px);
+        overflow-x: auto;
+        padding: 0px 50px 50px 50px;
+
+        // Bron: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_hide_scrollbar_keep_func
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    article {
+        img {
+            width: 240px;
+        }
+    }
+
+    nav {
+        position: relative;
+        bottom: 0;
+        background-color: transparent;
+        box-shadow: none;
+    }
 }
 
 // Large devices (desktops, 992px and up)

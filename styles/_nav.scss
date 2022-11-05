@@ -1,5 +1,5 @@
 nav {
-    position: fixed;
+    position: sticky;
     display: flex;
     overflow-x: auto;
     gap: 20px;
@@ -12,10 +12,17 @@ nav {
         @include font18;
         padding: 10px 20px;
         background-color: $pink;
-        border: none;
+        border: 1px solid $pink;
         border-radius: 10px;
         font-family: $font-stack;
         font-weight: bold;
         color: $white;
+        transition: .4s;
+        cursor: pointer;
+
+        &:hover {
+            background-color: transparent;
+            color: $pink;
+        }
     }
 }

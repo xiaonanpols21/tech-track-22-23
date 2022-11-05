@@ -11,8 +11,9 @@
 }
 
 body {
-    font-family: $font-stack;
+    position: relative;
     height: 100vh;
+    font-family: $font-stack;
     background: $background-day;
 }
 
@@ -22,4 +23,14 @@ img {
 
 a {
     text-decoration: none;
+}
+
+.arrow {
+    position: absolute;
+    right: 50px;
+    border: none;
+    background-color: transparent;
+    font-size: 50px;
+    color: $black;
+    z-index: 1;
 }
