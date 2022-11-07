@@ -20,6 +20,7 @@ function darkMode() {
 }
 darkBtn.addEventListener("click", darkMode);
 
+
 // Albums
 fetch('./data/bts-albums.json')
     .then((response) => response.json())
@@ -33,7 +34,7 @@ fetch('./data/bts-albums.json')
 		});
 		console.log(albums);
 
-		changeData(response)
+		//changeData(response)
 	})
 
 // Overview
@@ -41,21 +42,35 @@ fetch('./data/bts-overview.json')
     .then((response) => response.json())
     .then(response => {
 		changeData(response)
-		console.log(response.data.artist.visuals.gallery.items[0].sources[0].url);
+		//console.log(response.data.artist.visuals.gallery.items[0].sources[0].url);
 	})
-	
+
+
+const urls = ['./data/bts-albums.json', './data/bts-overview.json'];
+
+// Robbert
+Promise.all(urls.map(u => {
+	fetch(u)
+})).then(responses =>{
+    return Promise.all(responses.map(res => res.json()))
+}).then(data => {
+	console.log(data);
+});
+
+/*
+// Stackoverflow
+Promise.all(urls.map(u=>fetch(u))).then(responses =>
+    Promise.all(responses.map(res => res.text()))
+).then(texts => {
+	console.log(data);
+})
+*/
+
+
 function changeData(response) {
 	bandName.textContent = response.data.artist.profile.name;
 	followers.textContent = response.data.artist.stats.followers;
 	listeners.textContent = response.data.artist.stats.monthlyListeners;
 	profilePic.src = response.data.artist.visuals.gallery.items[0].sources[0].url;
-
-	Object.keys(response2.data.artist.discography.albums.items).forEach(item => {
-		let newEl = document.createElement("article");
-		newEl.textContent = key;
-		card.appendChild(newEl);
-	});
-
-
-
 } 
+
