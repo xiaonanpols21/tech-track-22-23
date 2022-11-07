@@ -1,6 +1,15 @@
 import '../styles/style.scss'
 import * as d3 from 'd3';
 
+const darkBtn = document.querySelector("header button");
+const body = document.querySelector("body");
+
+// Dark Mode
+function darkMode() {
+	body.classList.toggle("dark-mode");
+}
+darkBtn.addEventListener("click", darkMode);
+
 /*
 function getData() {
 	// Spotify API
@@ -75,14 +84,3 @@ function txtContent() {
 	//bandName.textContent = Object.keys();
 }
 txtContent();
-
-const darkBtn = document.querySelector("header button");
-const body = document.querySelector("body");
-
-function darkMode() {
-	body.classList.toggle("dark-mode");
-}
-
-darkBtn.addEventListener("click", darkMode);
-
-console.log(darkMode);
