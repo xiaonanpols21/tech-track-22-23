@@ -49,6 +49,7 @@ fetch('./data/bts-overview.json')
 const urls = ['./data/bts-albums.json', './data/bts-overview.json'];
 
 // Robbert
+/*
 Promise.all(urls.map(u => {
 	fetch(u)
 })).then(responses =>{
@@ -56,16 +57,14 @@ Promise.all(urls.map(u => {
 }).then(data => {
 	console.log(data);
 });
-
-/*
-// Stackoverflow
-Promise.all(urls.map(u=>fetch(u))).then(responses =>
-    Promise.all(responses.map(res => res.text()))
-).then(texts => {
-	console.log(data);
-})
 */
 
+// Stackoverflow
+Promise.all(urls.map(u=>fetch(u))).then(responses =>
+    Promise.all(responses.map(res => res.json()))
+).then(data => {
+	console.log(data);
+})
 
 function changeData(response) {
 	bandName.textContent = response.data.artist.profile.name;
