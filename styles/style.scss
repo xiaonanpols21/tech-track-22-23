@@ -38,4 +38,15 @@ a {
 .dark-mode {
     background: $background-night;
     color: $white;
+
+    .arrow {
+        color: $blue;
+    }
+
+    header {
+        background-color: transparent;
+        button {
+            color: $white;
+        }
+    }
 }
