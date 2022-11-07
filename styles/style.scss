@@ -34,3 +34,8 @@ a {
     color: $black;
     z-index: 1;
 }
+
+.dark-mode {
+    background: $background-night;
+    color: $white;
+}

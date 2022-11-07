@@ -1,6 +1,7 @@
 import '../styles/style.scss'
 import * as d3 from 'd3';
 
+/*
 function getData() {
 	// Spotify API
 	const options = {
@@ -41,12 +42,47 @@ function getData() {
 	// BTS ID: 3Nrfpe0tUJi4K4DXYWgMUX
 }
 getData();
+*/
 
+// Albums
+fetch('./data/bts-albums.json')
+    .then((response) => response.json())
+    .then(response => {
+		console.log(response);
+
+		// Albums
+		const albums = [];
+		response.data.artist.discography.albums.items.forEach(item => {
+			albums.push(item.releases.items[0]);
+		});
+		console.log(albums);
+	})
+
+// Overview
+fetch('./data/bts-overview.json')
+    .then((response) => response.json())
+    .then(response => {
+		//console.log(response);
+
+		const btsName = response.data.artist.profile.name;
+		console.log(btsName);
+	})
+	
 function txtContent() {
 	let bandName = document.querySelector("h1");
 	let followers = document.querySelector("header p:first-of-type a");
 	let linteners = document.querySelector("header p:last-of-type a");
-	bandName.textContent = Object.keys(getData(btsName));
+	//bandName.textContent = Object.keys();
 }
 txtContent();
 
+const darkBtn = document.querySelector("header button");
+const body = document.querySelector("body");
+
+function darkMode() {
+	body.classList.toggle("dark-mode");
+}
+
+darkBtn.addEventListener("click", darkMode);
+
+console.log(darkMode);
