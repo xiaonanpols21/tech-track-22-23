@@ -43,4 +43,13 @@ header {
         width: 90px;
         border-radius: 50%;
     }
+
+    button {
+        position: absolute;
+        top: 30px;
+        right: 20px;
+        background-color: transparent;
+        border: none;
+        font-size: 40px;
+    }
 }
