@@ -37,16 +37,15 @@ a {
 
 .dark-mode {
     background: $background-night;
-    color: $white;
+    color: $pink;
 
     .arrow {
         color: $blue;
     }
 
     header {
-        background-color: transparent;
         button {
-            color: $white;
+            color: $pink;
         }
     }
 }

@@ -1,5 +1,6 @@
 import '../styles/style.scss'
 import * as d3 from 'd3';
+import { html } from 'd3';
 
 // Data
 const urls = ['./data/bts-albums.json', './data/bts-overview.json'];
@@ -26,18 +27,7 @@ function darkMode() {
 }
 darkBtn.addEventListener("click", darkMode);
 
-// Robbert
-/*
-Promise.all(urls.map(u => {
-	fetch(u)
-})).then(responses =>{
-    return Promise.all(responses.map(res => res.json()))
-}).then(data => {
-	console.log(data);
-});
-*/
-
-// Stackoverflow https://stackoverflow.com/questions/31710768/how-can-i-fetch-an-array-of-urls-with-promise-all
+// Fetch data Stackoverflow https://stackoverflow.com/questions/31710768/how-can-i-fetch-an-array-of-urls-with-promise-all
 Promise.all(urls.map(u=>fetch(u))).then(responses =>
     Promise.all(responses.map(res => res.json()))
 ).then(data => {
@@ -57,9 +47,35 @@ function changeData(data, albums) {
 	listeners.textContent = data[1].data.artist.stats.monthlyListeners;
 	profilePic.src = data[1].data.artist.visuals.gallery.items[0].sources[0].url;
 
+	// Show 1 album
 	yearEl.textContent = albums[0].date.year;
 	titleEl.textContent = albums[0].name;
 	albumImg.src = albums[0].coverArt.sources[2].url;
+
+	/* Poging 1
+	Object.keys(albums[0].date.year).forEach(key => {
+		let article = document.createElement("article");
+		yearEl.textContent = key;
+		card.appendChild(article);
+	});
+
+	albums.forEach(obj => {
+		for (const [key, value] of Object.entries(obj)) {
+			
+		}
+	})
+	*/
+
+	/* Poging 2
+	albums.forEach(function(val) {
+		html += "<article>";
+		html += "<h2>";
+		html += "<h3>";
+		html += "<img src=''"
+		html += "</article>"
+	})
+	*/
+
 } 
 
 // TODO: Sorteren andersom en foreach maken
