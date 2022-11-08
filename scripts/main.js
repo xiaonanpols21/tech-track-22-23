@@ -31,16 +31,26 @@ darkBtn.addEventListener("click", darkMode);
 Promise.all(urls.map(u=>fetch(u))).then(responses =>
     Promise.all(responses.map(res => res.json()))
 ).then(data => {
+
+	// Make new array from only the Albums
 	const albums = [];
 	data[0].data.artist.discography.albums.items.forEach(item => {
 		albums.push(item.releases.items[0]);
 	});
-	console.log(albums);
+
+	// Sort from debut to present
+	function order(albums) {
+		return albums.sort(function(a, b) {
+			return a === b ? 0 : a < b ? 1 : -1;
+		})
+	}
+	console.log(order(albums));
 
 	console.log(data);
 	changeData(data, albums);
 })
 
+// Show to the HTML
 function changeData(data, albums) {
 	bandName.textContent = data[1].data.artist.profile.name;
 	followers.textContent = data[1].data.artist.stats.followers;
