@@ -15,14 +15,6 @@ const bandName = document.querySelector("h1");
 const followers = document.querySelector("header p:first-of-type a");
 const listeners = document.querySelector("header p:last-of-type a");
 
-/*
-const yearEl = document.querySelector("article h2");
-const titleEl = document.querySelector("article h3");
-const albumImg = document.querySelector("article img");
-const play = document.querySelector("article a")
-const card = document.querySelector("article");
-*/
-
 const main = document.querySelector("main");
 
 // Dark Mode
@@ -60,16 +52,6 @@ function changeData(data, albums) {
 	followers.textContent = data[1].data.artist.stats.followers;
 	listeners.textContent = data[1].data.artist.stats.monthlyListeners;
 	profilePic.src = data[1].data.artist.visuals.gallery.items[0].sources[0].url;
-
-	// Show 1 album
-	/*
-	yearEl.textContent = albums[0].date.year;
-	titleEl.textContent = albums[0].name;
-	//albumImg.src = albums[0].coverArt.sources[2].url;
-
-	play.href = albums[0].sharingInfo.shareUrl;
-	console.log(albums[0].sharingInfo.shareUrl);
-	*/
 
 	// Poging 3
 	albums.forEach((element) => {
