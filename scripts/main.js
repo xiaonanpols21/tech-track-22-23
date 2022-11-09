@@ -27,7 +27,7 @@ function darkMode() {
 }
 darkBtn.addEventListener("click", darkMode);
 
-// Fetch data Stackoverflow https://stackoverflow.com/questions/31710768/how-can-i-fetch-an-array-of-urls-with-promise-all
+// Fetch data, Stackoverflow https://stackoverflow.com/questions/31710768/how-can-i-fetch-an-array-of-urls-with-promise-all
 Promise.all(urls.map(u=>fetch(u))).then(responses =>
     Promise.all(responses.map(res => res.json()))
 ).then(data => {
@@ -38,7 +38,7 @@ Promise.all(urls.map(u=>fetch(u))).then(responses =>
 		albums.push(item.releases.items[0]);
 	});
 
-	// Sort from debut to present
+	// Sort from debut to present, Freecodecamp
 	function order(albums) {
 		return albums.sort(function(a, b) {
 			return a === b ? 0 : a < b ? 1 : -1;
