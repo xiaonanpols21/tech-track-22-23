@@ -22,6 +22,8 @@ const play = document.querySelector("article a")
 
 const card = document.querySelector("article");
 
+const main = document.querySelector("main");
+
 // Dark Mode
 function darkMode() {
 	body.classList.toggle("dark-mode");
@@ -61,34 +63,30 @@ function changeData(data, albums) {
 	// Show 1 album
 	yearEl.textContent = albums[0].date.year;
 	titleEl.textContent = albums[0].name;
-	albumImg.src = albums[0].coverArt.sources[2].url;
-	// TODO: Play doet nog nii
+	//albumImg.src = albums[0].coverArt.sources[2].url;
+	
 	play.href = albums[0].sharingInfo.shareUrl;
 	console.log(albums[0].sharingInfo.shareUrl);
 
-	/* Poging 1
-	Object.keys(albums[0].date.year).forEach(key => {
-		let article = document.createElement("article");
-		yearEl.textContent = key;
-		card.appendChild(article);
+	// Poging 3
+	albums.forEach((element) => {
+		const albumImg = element.coverArt.sources[2].url;
+		const year = element.date.year;
+		const name = element.name;
+		// TODO: Play doet nog nii
+		const play = element.sharingInfo.shareUrl;
+		console.log(play);
+
+		const html = `
+		<article>
+			<h2>${year}</h2>
+			<h3>${name}</h3>
+			<img src="${albumImg}" alt="BTS Album">
+			<a class="play" href="${play}"><i class="fa-solid fa-play"></i></a>
+		</article>
+		`
+		main.insertAdjacentHTML("beforeend", html );
 	});
-
-	albums.forEach(obj => {
-		for (const [key, value] of Object.entries(obj)) {
-			
-		}
-	})
-	*/
-
-	/* Poging 2
-	albums.forEach(function(val) {
-		html += "<article>";
-		html += "<h2>";
-		html += "<h3>";
-		html += "<img src=''"
-		html += "</article>"
-	})
-	*/
 
 } 
 
