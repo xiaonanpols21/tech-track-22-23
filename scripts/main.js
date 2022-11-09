@@ -18,6 +18,7 @@ const listeners = document.querySelector("header p:last-of-type a");
 const yearEl = document.querySelector("article h2");
 const titleEl = document.querySelector("article h3");
 const albumImg = document.querySelector("article img");
+const play = document.querySelector("article a")
 
 const card = document.querySelector("article");
 
@@ -61,6 +62,9 @@ function changeData(data, albums) {
 	yearEl.textContent = albums[0].date.year;
 	titleEl.textContent = albums[0].name;
 	albumImg.src = albums[0].coverArt.sources[2].url;
+	// TODO: Play doet nog nii
+	play.href = albums[0].sharingInfo.shareUrl;
+	console.log(albums[0].sharingInfo.shareUrl);
 
 	/* Poging 1
 	Object.keys(albums[0].date.year).forEach(key => {
@@ -88,4 +92,4 @@ function changeData(data, albums) {
 
 } 
 
-// TODO: Sorteren andersom en foreach maken
+// TODO: foreach maken, play btn, filter year slider
