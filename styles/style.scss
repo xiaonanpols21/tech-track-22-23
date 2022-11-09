@@ -25,6 +25,27 @@ a {
     text-decoration: none;
 }
 
+@keyframes go-right {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(20px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
 .arrow {
     position: absolute;
     right: 50px;
@@ -33,6 +54,12 @@ a {
     font-size: 50px;
     color: $black;
     z-index: 1;
+
+    animation-name: go-right, fade-out;
+    animation-duration: 2s, 2s;
+    animation-iteration-count: 3, 1;
+    animation-delay: 0s, 3s;
+    animation-fill-mode: none, forwards;  
 }
 
 .dark-mode {
