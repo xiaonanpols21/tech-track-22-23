@@ -7,22 +7,31 @@ nav {
     padding: 20px;
     background-color: $white;
     box-shadow: inset $shadow-3-6;
+}
 
-    button {
-        @include font18;
-        padding: 10px 20px;
-        background-color: $pink;
-        border: 1px solid $pink;
-        border-radius: 10px;
-        font-family: $font-stack;
-        font-weight: bold;
-        color: $white;
-        transition: .4s;
-        cursor: pointer;
+.btn {
+    @include font18;
+    padding: 10px 20px;
+    background-color: $pink;
+    border: 1px solid $pink;
+    border-radius: 10px;
+    font-family: $font-stack;
+    font-weight: bold;
+    color: $white;
+    transition: .4s;
+    cursor: pointer;
+
+    &:hover {
+        background-color: transparent;
+        color: $pink;
+    }
+
+    &.active {
+        border: 1px solid $blue;
+        background-color: $blue;
 
         &:hover {
-            background-color: transparent;
-            color: $pink;
+           color: $white;
         }
     }
 }

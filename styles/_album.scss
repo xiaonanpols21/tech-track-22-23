@@ -20,6 +20,8 @@ article {
 
     h3 {
         @include font24;
+        line-height: 28px;
+        max-width: 240px;
         font-weight: 300;
         color: $black;
     }

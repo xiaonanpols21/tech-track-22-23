@@ -12,7 +12,6 @@
 
 body {
     position: relative;
-    height: 100vh;
     font-family: $font-stack;
     background: $background-day;
 }
@@ -49,6 +48,7 @@ a {
 .arrow {
     position: absolute;
     right: 50px;
+    bottom: 30px;
     border: none;
     background-color: transparent;
     font-size: 50px;
@@ -75,4 +75,12 @@ a {
             color: $pink;
         }
     }
+}
+
+.card {
+    opacity: 0;
+}
+
+.card.show {
+    opacity: 1;
 }
