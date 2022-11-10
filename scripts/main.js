@@ -62,7 +62,8 @@ function changeData(data, albums) {
 		const play = item.sharingInfo.shareUrl;
 
 		const html = 
-		`<article class="${year} card">
+		//`<article class="${year} card">
+		`<article data-name="d${year}">
 			<h2>${year}</h2>
 			<h3>${name}</h3>
 			<img src="${albumImg}" alt="${name}">
@@ -73,52 +74,33 @@ function changeData(data, albums) {
 	});
 };
 
-/* W3Schools filter
-filterSelection("all")
-function filterSelection(c) {
-  var x, i;
-  x = document.querySelector("article");
-  if (c == "all") c = "";
-  for (i = 0; i < x.length; i++) {
-    w3RemoveClass(x[i], "show");
-    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
-  }
+// Filter https://www.youtube.com/watch?v=OeMuUKedtPc&ab_channel=CodingNepal
+// zelfde probleem intersection observer
+const filterItem = document.querySelector("nav");
+const filterImg = document.querySelectorAll("article");
+
+window.onload = () => {
+	filterItem.onclick = (selectedItem) => {
+		if (selectedItem.target.classList.contains("btn")) {
+			filterItem.querySelector(".active").classList.remove("active");
+			selectedItem.target.classList.add("active");
+
+			let filterName = selectedItem.target.getAttribute("data-name");
+			filterImg.forEach((image) => {
+				let filterImages = image.getAttribute("data-name");
+				console.log(filterImages);
+			});
+			console.log(filterImg)
+		}
+	}
 }
 
-function w3AddClass(element, name) {
-  var i, arr1, arr2;
-  arr1 = element.className.split(" ");
-  arr2 = name.split(" ");
-  for (i = 0; i < arr2.length; i++) {
-    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
-  }
-}
 
-function w3RemoveClass(element, name) {
-  var i, arr1, arr2;
-  arr1 = element.className.split(" ");
-  arr2 = name.split(" ");
-  for (i = 0; i < arr2.length; i++) {
-    while (arr1.indexOf(arr2[i]) > -1) {
-      arr1.splice(arr1.indexOf(arr2[i]), 1);     
-    }
-  }
-  element.className = arr1.join(" ");
-}
+// TODO: , filter year slider, object server
 
-// Add active class to the current button (highlight it)
-var btnContainer = document.querySelector("nav");
-var btns = btnContainer.getElementsByClassName("btn");
-for (var i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", function(){
-    var current = document.getElementsByClassName("active");
-    current[0].className = current[0].className.replace(" active", "");
-    this.className += " active";
-  });
-}
-*/
-
-
+/*
+Intersection observer
+hij doet het niet omdat in js foreach wordt gemaakt, er zijn niet egte .cards hij doet het alleen als ik de gene uit comment in index.html
 const cards = document.querySelectorAll(".card")
 console.log(cards)
 
@@ -131,7 +113,4 @@ const observer = new IntersectionObserver((entries) => {
 cards.forEach((card) => {
 	observer.observe(card)
 })
-
-
-
-// TODO: , filter year slider, show cards api see project tech
+*/

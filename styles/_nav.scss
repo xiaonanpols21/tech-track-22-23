@@ -25,13 +25,9 @@ nav {
         background-color: transparent;
         color: $pink;
     }
+}
 
-    &.active {
-        border: 1px solid $blue;
-        background-color: $blue;
-
-        &:hover {
-           color: $white;
-        }
-    }
+.active {
+    border: 1px solid $blue;
+    background-color: $blue;
 }
