@@ -67,7 +67,7 @@ function changeData(data, albums) {
 			<h2>${year}</h2>
 			<h3>${name}</h3>
 			<img src="${albumImg}" alt="${name}">
-			<a class="play" href="${play}"><i class="fa-solid fa-play"></i></a>
+			<a class="play" href="${play}" target="_blank"><i class="fa-solid fa-play"></i></a>
 		</article>`
 		main.insertAdjacentHTML("beforeend", html );
 		// Web API, insertAdjacentHTML is om het te tonen in de main. Beforeend betekend: Before the end of the element (last child), W3Schools https://www.w3schools.com/jsref/met_node_insertadjacenthtml.asp
@@ -100,6 +100,7 @@ window.onload = () => {
 
 // TODO: , filter year slider, object server
 
+// Intersection observer https://www.youtube.com/watch?v=2IbRtjez6ag&t=316s&ab_channel=WebDevSimplified
 function addEvents(element) {
 	const cards = document.querySelectorAll(".card")
 	console.log(cards)
