@@ -63,7 +63,7 @@ function changeData(data, albums) {
 
 		const html = 
 		//`<article class="${year} card">
-		`<article data-name="d${year}">
+		`<article class="card" data-name="d${year}">
 			<h2>${year}</h2>
 			<h3>${name}</h3>
 			<img src="${albumImg}" alt="${name}">
@@ -71,6 +71,8 @@ function changeData(data, albums) {
 		</article>`
 		main.insertAdjacentHTML("beforeend", html );
 		// Web API, insertAdjacentHTML is om het te tonen in de main. Beforeend betekend: Before the end of the element (last child), W3Schools https://www.w3schools.com/jsref/met_node_insertadjacenthtml.asp
+	
+		addEvents(html);
 	});
 };
 
@@ -98,19 +100,21 @@ window.onload = () => {
 
 // TODO: , filter year slider, object server
 
-/*
-Intersection observer
-hij doet het niet omdat in js foreach wordt gemaakt, er zijn niet egte .cards hij doet het alleen als ik de gene uit comment in index.html
-const cards = document.querySelectorAll(".card")
-console.log(cards)
+function addEvents(element) {
+	const cards = document.querySelectorAll(".card")
+	console.log(cards)
 
-const observer = new IntersectionObserver((entries) => {
-	entries.forEach((entry) => {
-		entry.target.classList.toggle("show", entry.isIntersecting)
+	const observer = new IntersectionObserver((entries) => {
+		entries.forEach((entry) => {
+			entry.target.classList.toggle("show", entry.isIntersecting)
+		})
 	})
-})
 
-cards.forEach((card) => {
-	observer.observe(card)
-})
-*/
+	cards.forEach((card) => {
+		observer.observe(card)
+	});
+}
+
+
+
+

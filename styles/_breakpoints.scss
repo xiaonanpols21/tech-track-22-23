@@ -42,9 +42,10 @@
     }
 
     main {
-        @include flex(row, 50px);
+        @include flex(row, 0px);
         overflow-x: auto;
         padding: 0px 50px 50px 50px;
+        margin-top: -20px;
 
         // Bron: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_hide_scrollbar_keep_func
         &::-webkit-scrollbar {
@@ -53,6 +54,8 @@
     }
 
     article {
+        margin: 30px;
+
         img {
             width: 240px;
         }
