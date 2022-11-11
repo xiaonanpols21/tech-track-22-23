@@ -133,11 +133,29 @@ g.item text {
 */
 
 // Scale
-
-
+/*
 text {
 	fill: #555;
 }
 .inner text {
 	text-anchor: middle;
 }
+*/
+
+// Shapes
+/* Pie chart donut
+path {
+	fill: orange;
+}
+*/
+
+path {
+	fill: none;
+	stroke: #999;
+}
+circle {
+	fill: none;
+	stroke: #aaa;
+}
+
+

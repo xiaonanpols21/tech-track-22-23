@@ -203,6 +203,7 @@ d3.select('svg .inner')
 });
 */
 
+/*
 var data = [0.243, 0.584, 0.987, 0.153, 0.433];
 var extent = d3.extent(data);
 
@@ -215,4 +216,86 @@ var axis = d3.axisBottom(linearScale);
 
 d3.select('.axis')
 	.call(axis);
+*/
 
+// Shapes
+
+// Create an arc generator with configuration
+/* Pie chart donut
+var arcGenerator = d3.arc()
+	.innerRadius(20)
+	.outerRadius(60)
+	.padAngle(.02)
+	.padRadius(100)
+	.cornerRadius(5);
+
+var arcData = [
+	{startAngle: 0, endAngle: 0.2},
+	{startAngle: 0.2, endAngle: 0.6},
+	{startAngle: 0.6, endAngle: 1.4},
+	{startAngle: 1.4, endAngle: 3},
+	{startAngle: 3, endAngle: 2* Math.PI}
+];
+
+// Create a path element and set its d attribute
+d3.select('g')
+	.selectAll('path')
+	.data(arcData)
+	.join('path')
+	.attr('d', arcGenerator);
+*/
+
+/* Line
+const xScale = d3.scaleLinear().domain([0, 6]).range([0, 600]);
+const yScale = d3.scaleLinear().domain([0, 80]).range([150, 0]);
+
+const lineGenerator = d3.line()
+	.curve(d3.curveCardinal) // Remove and you wil have no curves
+	.x(function(d, i) {
+		return xScale(i);
+	})
+	.y(function(d) {
+		return yScale(d.value);
+	});
+
+const data = [
+	{value: 10}, 
+	{value: 50}, 
+	{value: 30}, 
+	{value: 40}, 
+	{value: 20}, 
+	{value: 70},
+	{value: 50}
+];
+
+const line = lineGenerator(data);
+
+// Create a path element and set its d attribute
+d3.select('g')
+	.append('path')
+	.attr('d', line);
+
+// Om circles te hebben: https://codepen.io/pen?editors=0010
+*/
+
+/* Radial
+var radialLineGenerator = d3.radialLine();
+
+var points = [
+	[0, 80],
+	[Math.PI * 0.25, 80],
+	[Math.PI * 0.5, 30],
+	[Math.PI * 0.75, 80],
+	[Math.PI, 80],
+	[Math.PI * 1.25, 80],
+	[Math.PI * 1.5, 80],
+	[Math.PI * 1.75, 80],
+	[Math.PI * 2, 80]
+];
+
+var radialLine = radialLineGenerator(points);
+
+d3.select('g')
+	.append('path')
+	.attr('d', radialLine);
+*/
