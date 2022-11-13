@@ -16,6 +16,8 @@ const followers = document.querySelector("header p:first-of-type a");
 const listeners = document.querySelector("header p:last-of-type a");
 
 const main = document.querySelector("main");
+const buttons = document.querySelectorAll("nav button");
+const firstBtn = document.querySelector("nav button:first-of-type");
 
 // Dark Mode
 function darkMode() {
@@ -77,24 +79,31 @@ function changeData(data, albums) {
 };
 
 // Knoppen combo cards Robbert Tutorial
-const buttons = document.querySelectorAll('nav button')
-
-buttons.forEach(button => {
-	button.addEventListener('click', filter)
-})
-
 function filter(e) {
-	let allItems = document.querySelectorAll('main article')
-
-	allItems.forEach(item => {
-		item.classList.add('hidden');
+	const allArticle = document.querySelectorAll("article");
+	
+	allArticle.forEach(item => {
+		item.classList.add("hidden");
 		
-		if(item.getAttribute('data-name') === e.target.value) {
-			console.log('match!', e.target.value);
-			item.classList.remove('hidden');
+		if(item.getAttribute("data-name") === e.target.value) {
+			item.classList.remove("hidden");
 		};
 	});
 };
+
+buttons.forEach(button => {
+	button.addEventListener("click", filter)
+});
+
+function filterAll() {
+	const allArticle = document.querySelectorAll("article");
+	
+	allArticle.forEach(item => {
+		item.classList.remove("hidden");
+	});
+};
+
+firstBtn.addEventListener("click", filterAll);
 
 /*
 function randomNumber(min, max) { // min and max included 

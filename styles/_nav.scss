@@ -31,3 +31,45 @@ nav {
     border: 1px solid $blue;
     background-color: $blue;
 }
+
+@keyframes go-right {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes fade-out {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.arrow {
+    position: fixed;
+    bottom: 92px + 20px;
+    right: 20px;
+    border: none;
+    background-color: transparent;
+    font-size: 50px;
+    color: $black;
+    z-index: 1;
+
+    animation-name: go-right, fade-out;
+    animation-duration: 2s, 2s;
+    animation-iteration-count: 3, 1;
+    animation-delay: 0s, 3s;
+    animation-fill-mode: none, forwards;  
+
+    i {
+        transform: rotate(90deg);
+    }
+}
