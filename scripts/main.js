@@ -1,6 +1,6 @@
 import '../styles/style.scss'
 import * as d3 from 'd3';
-import { html } from 'd3';
+import { html, thresholdScott } from 'd3';
 
 // Data
 const urls = ['./data/bts-albums.json', './data/bts-overview.json'];
@@ -47,6 +47,7 @@ Promise.all(urls.map(u=>fetch(u))).then(responses =>
 });
 
 // Show to the HTML
+
 function changeData(data, albums) {
 	// Header
 	bandName.textContent = data[1].data.artist.profile.name;
@@ -62,8 +63,7 @@ function changeData(data, albums) {
 		const play = item.sharingInfo.shareUrl;
 
 		const html = 
-		//`<article class="${year} card">
-		`<article class="card" data-name="d${year}">
+		`<article class="card" data-name="${year}">
 			<h2>${year}</h2>
 			<h3>${name}</h3>
 			<img src="${albumImg}" alt="${name}">
@@ -76,45 +76,58 @@ function changeData(data, albums) {
 	});
 };
 
-// Filter https://www.youtube.com/watch?v=OeMuUKedtPc&ab_channel=CodingNepal
-// zelfde probleem intersection observer
-const filterItem = document.querySelector("nav");
-const filterImg = document.querySelectorAll("article");
+// Knoppen combo cards Robbert Tutorial
+const buttons = document.querySelectorAll('nav button')
 
+buttons.forEach(button => {
+	button.addEventListener('click', filter)
+})
+
+function filter(e) {
+	let allItems = document.querySelectorAll('main article')
+
+	allItems.forEach(item => {
+		item.classList.add('hidden');
+		
+		if(item.getAttribute('data-name') === e.target.value) {
+			console.log('match!', e.target.value);
+			item.classList.remove('hidden');
+		};
+	});
+};
+
+/*
+function randomNumber(min, max) { // min and max included 
+  return Math.floor(Math.random() * (max - min + 1) + min)
+};
+*/
+
+// Filter voor knoppen https://www.youtube.com/watch?v=OeMuUKedtPc&ab_channel=CodingNepal
+const filterItem = document.querySelector("nav");
 window.onload = () => {
 	filterItem.onclick = (selectedItem) => {
 		if (selectedItem.target.classList.contains("btn")) {
 			filterItem.querySelector(".active").classList.remove("active");
 			selectedItem.target.classList.add("active");
-
-			let filterName = selectedItem.target.getAttribute("data-name");
-			filterImg.forEach((image) => {
-				let filterImages = image.getAttribute("data-name");
-				console.log(filterImages);
-			});
-			console.log(filterImg)
-		}
-	}
-}
-
-
-// TODO: , filter year slider, object server
+		};
+	};
+};
 
 // Intersection observer https://www.youtube.com/watch?v=2IbRtjez6ag&t=316s&ab_channel=WebDevSimplified
 function addEvents(element) {
 	const cards = document.querySelectorAll(".card")
-	console.log(cards)
-
 	const observer = new IntersectionObserver((entries) => {
 		entries.forEach((entry) => {
 			entry.target.classList.toggle("show", entry.isIntersecting)
-		})
-	})
-
+		});
+	}, {
+		threshold: 0.5,
+	});
+	
 	cards.forEach((card) => {
 		observer.observe(card)
 	});
-}
+};
 
 
 

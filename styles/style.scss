@@ -77,93 +77,14 @@ a {
     }
 }
 
-// .card {
-//     opacity: 0;
-// }
-
-// .card.show {
-//     opacity: 1;
-// }
-
-.bar {
-    cursor: pointer;
-    transition: .4s;
-    fill: purple;
-
-    &:hover {
-        fill: brown;
-    }
-}
-
-#tooltip {
-    position: absolute;
-    background: #444444;
-    color: #ffffff;
-    font-family: sans-serif;
-    padding: 0.5em;
-    box-shadow: 5px 3px 14px -1px rgba(0,0,0,0.46);
-    border-radius: 5px;
+.card {
     opacity: 0;
-    pointer-events: none;
 }
 
-// D3 tutorial
-/* Selections
-circle {
-	fill: orange;
-}
-g.item text {
-	fill: #ddd;
-	font-size: 70px;
-	text-anchor: middle;
-	font-weight: bold;
-}
-*/
-
-/*
-.bars rect {
-  fill: steelblue;
+.card.show {
+     opacity: 1;
 }
 
-.bars rect:hover {
-  fill: orange;
-}
-
-.labels text {
-  text-anchor: end;
-}
-*/
-
-// Scale
-/*
-text {
-	fill: #555;
-}
-.inner text {
-	text-anchor: middle;
-}
-*/
-
-// Shapes
-/* Pie chart donut
-path {
-	fill: orange;
-}
-*/
-
-/*
-path {
-	fill: none;
-	stroke: #999;
-}
-circle {
-	fill: none;
-	stroke: #aaa;
-}
-*/
-
-.container {
-    width: 250px;
-    height: 200px;
-    border: 1px solid red;
+.hidden {
+	display: none;
 }
