@@ -77,28 +77,14 @@ a {
     }
 }
 
-// .card {
-//     opacity: 0;
-// }
-
-// .card.show {
-//     opacity: 1;
-// }
-
-main {
-	display: flex;
+.card {
+    opacity: 0;
 }
 
-article {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 5em;
-    aspect-ratio: 1/1;
-    background: pink;
-    margin: 1em;
+.card.show {
+     opacity: 1;
 }
 
 .hidden {
-    display: none;
+	display: none;
 }

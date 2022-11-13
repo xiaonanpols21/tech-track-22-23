@@ -1,6 +1,6 @@
 import '../styles/style.scss'
 import * as d3 from 'd3';
-import { filter, html } from 'd3';
+import { html } from 'd3';
 
 // Data
 const urls = ['./data/bts-albums.json', './data/bts-overview.json'];
@@ -47,6 +47,7 @@ Promise.all(urls.map(u=>fetch(u))).then(responses =>
 });
 
 // Show to the HTML
+
 function changeData(data, albums) {
 	// Header
 	bandName.textContent = data[1].data.artist.profile.name;
@@ -62,7 +63,6 @@ function changeData(data, albums) {
 		const play = item.sharingInfo.shareUrl;
 
 		const html = 
-		//`<article class="${year} card">
 		`<article class="card" data-name="d${year}">
 			<h2>${year}</h2>
 			<h3>${name}</h3>
@@ -76,6 +76,7 @@ function changeData(data, albums) {
 	});
 };
 
+
 // Filter https://www.youtube.com/watch?v=OeMuUKedtPc&ab_channel=CodingNepal
 // zelfde probleem intersection observer
 const filterItem = document.querySelector("nav");
@@ -88,34 +89,36 @@ window.onload = () => {
 	}
 }
 
-// Tutorial robbert
-/*
-const buttons = document.querySelectorAll("nav button");
+// Robbert tutorial
+const buttons = document.querySelectorAll('nav button')
 
 buttons.forEach(button => {
-	button.addEventListener("click", filter);
-});
+	button.addEventListener('click', filter)
+})
 
-for(let i = 1; 9 < 6; i++) {
-	let newEl = document.createElement("article");
-	newEl.setAttribute("data-name", i);
+for(let i = 2013; i < 2023; i++) {
+	let newEl = document.createElement('article');
+	newEl.setAttribute('data-name', i);
 	newEl.innerHTML = `Jaar: ${i}`;
 	main.appendChild(newEl);
 };
 
 function filter(e) {
-	let allItems = document.querySelectorAll("article")
-		
+	let allItems = document.querySelectorAll('main article')
+
 	allItems.forEach(item => {
 		item.classList.add('hidden');
 		
 		if(item.getAttribute('data-name') === e.target.value) {
 			console.log('match!', e.target.value);
 			item.classList.remove('hidden');
-		}
-	})
+		};
+	});
 };
-*/
+
+function randomNumber(min, max) { // min and max included 
+  return Math.floor(Math.random() * (max - min + 1) + min)
+};
 
 // TODO: , filter year slider, object server
 
