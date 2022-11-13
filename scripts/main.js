@@ -1,6 +1,6 @@
 import '../styles/style.scss'
 import * as d3 from 'd3';
-import { html } from 'd3';
+import { html, thresholdScott } from 'd3';
 
 // Data
 const urls = ['./data/bts-albums.json', './data/bts-overview.json'];
@@ -63,7 +63,7 @@ function changeData(data, albums) {
 		const play = item.sharingInfo.shareUrl;
 
 		const html = 
-		`<article class="card" data-name="d${year}">
+		`<article class="card" data-name="${year}">
 			<h2>${year}</h2>
 			<h3>${name}</h3>
 			<img src="${albumImg}" alt="${name}">
@@ -76,32 +76,12 @@ function changeData(data, albums) {
 	});
 };
 
-
-// Filter https://www.youtube.com/watch?v=OeMuUKedtPc&ab_channel=CodingNepal
-// zelfde probleem intersection observer
-const filterItem = document.querySelector("nav");
-window.onload = () => {
-	filterItem.onclick = (selectedItem) => {
-		if (selectedItem.target.classList.contains("btn")) {
-			filterItem.querySelector(".active").classList.remove("active");
-			selectedItem.target.classList.add("active");
-		}
-	}
-}
-
-// Robbert tutorial
+// Knoppen combo cards Robbert Tutorial
 const buttons = document.querySelectorAll('nav button')
 
 buttons.forEach(button => {
 	button.addEventListener('click', filter)
 })
-
-for(let i = 2013; i < 2023; i++) {
-	let newEl = document.createElement('article');
-	newEl.setAttribute('data-name', i);
-	newEl.innerHTML = `Jaar: ${i}`;
-	main.appendChild(newEl);
-};
 
 function filter(e) {
 	let allItems = document.querySelectorAll('main article')
@@ -116,11 +96,22 @@ function filter(e) {
 	});
 };
 
+/*
 function randomNumber(min, max) { // min and max included 
   return Math.floor(Math.random() * (max - min + 1) + min)
 };
+*/
 
-// TODO: , filter year slider, object server
+// Filter voor knoppen https://www.youtube.com/watch?v=OeMuUKedtPc&ab_channel=CodingNepal
+const filterItem = document.querySelector("nav");
+window.onload = () => {
+	filterItem.onclick = (selectedItem) => {
+		if (selectedItem.target.classList.contains("btn")) {
+			filterItem.querySelector(".active").classList.remove("active");
+			selectedItem.target.classList.add("active");
+		};
+	};
+};
 
 // Intersection observer https://www.youtube.com/watch?v=2IbRtjez6ag&t=316s&ab_channel=WebDevSimplified
 function addEvents(element) {
@@ -128,13 +119,15 @@ function addEvents(element) {
 	const observer = new IntersectionObserver((entries) => {
 		entries.forEach((entry) => {
 			entry.target.classList.toggle("show", entry.isIntersecting)
-		})
-	})
-
+		});
+	}, {
+		threshold: 0.5,
+	});
+	
 	cards.forEach((card) => {
 		observer.observe(card)
 	});
-}
+};
 
 
 
