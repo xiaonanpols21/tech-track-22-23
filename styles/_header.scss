@@ -45,7 +45,7 @@ header {
         object-fit: cover;
     }
 
-    button {
+    button:last-of-type {
         position: absolute;
         top: 30px;
         right: 20px;
