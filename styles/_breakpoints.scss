@@ -4,12 +4,6 @@
 }
 
 // Medium devices (tablets, 768px and up)
-@media (max-width: 768px) {
-    .arrow {
-        display: none;
-    }
-}
-
 @media (min-width: 768px) {
     body {
         height: 100vh;
@@ -69,6 +63,26 @@
         padding: 0px;
         background-color: transparent;
         box-shadow: none;
+    }
+
+    @keyframes go-right {
+        0% {
+            transform: translateX(0);
+        }
+        50% {
+            transform: translateX(20px);
+        }
+        100% {
+            transform: translateX(0);
+        }
+    }
+
+    .arrow {
+        right: 40px;
+        
+        i {
+            transform: rotate(0deg);
+        }
     }
 }
 
