@@ -79,20 +79,12 @@ function changeData(data, albums) {
 // Filter https://www.youtube.com/watch?v=OeMuUKedtPc&ab_channel=CodingNepal
 // zelfde probleem intersection observer
 const filterItem = document.querySelector("nav");
-const filterImg = document.querySelectorAll("article");
 
 window.onload = () => {
 	filterItem.onclick = (selectedItem) => {
 		if (selectedItem.target.classList.contains("btn")) {
 			filterItem.querySelector(".active").classList.remove("active");
 			selectedItem.target.classList.add("active");
-
-			let filterName = selectedItem.target.getAttribute("data-name");
-			filterImg.forEach((image) => {
-				let filterImages = image.getAttribute("data-name");
-				console.log(filterImages);
-			});
-			console.log(filterImg)
 		}
 	}
 }
@@ -103,8 +95,6 @@ window.onload = () => {
 // Intersection observer https://www.youtube.com/watch?v=2IbRtjez6ag&t=316s&ab_channel=WebDevSimplified
 function addEvents(element) {
 	const cards = document.querySelectorAll(".card")
-	console.log(cards)
-
 	const observer = new IntersectionObserver((entries) => {
 		entries.forEach((entry) => {
 			entry.target.classList.toggle("show", entry.isIntersecting)
