@@ -84,3 +84,21 @@ a {
 // .card.show {
 //     opacity: 1;
 // }
+
+main {
+	display: flex;
+}
+
+article {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5em;
+    aspect-ratio: 1/1;
+    background: pink;
+    margin: 1em;
+}
+
+.hidden {
+    display: none;
+}
