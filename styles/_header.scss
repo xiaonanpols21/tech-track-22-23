@@ -45,13 +45,33 @@ header {
         object-fit: cover;
     }
 
-    button:last-of-type {
+    button {
         position: absolute;
         top: 30px;
         right: 20px;
         background-color: transparent;
         border: none;
         font-size: 40px;
+        color: $black;
         cursor: pointer;
+        transition: .4s;
+
+        &:hover {
+            color: $blue;
+        }
     }
+}
+
+.world {
+    position: absolute;
+    display: block;
+    font-size: 40px;
+    color: $black;
+    top: 30px - 3px;
+    right: 40px + 40px;
+    transition: .4s;
+
+        &:hover {
+            color: $blue;
+        }
 }

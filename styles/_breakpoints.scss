@@ -32,7 +32,14 @@
         button {
             top: 30px;
             right: 50px;
+            font-size: 50px;
         }
+    }
+
+    .world {
+        top: 20px + 6px;
+        right: 40px + 80px;
+        font-size: 50px;
     }
 
     main {
@@ -79,6 +86,7 @@
 
     .arrow {
         right: 40px;
+        bottom: 50px;
         
         i {
             transform: rotate(0deg);

@@ -6,7 +6,7 @@ import { html, thresholdScott } from 'd3';
 const urls = ['./data/bts-albums.json', './data/bts-overview.json'];
 
 // Dark Mode
-const darkBtn = document.querySelector("header button:last-of-type");
+const darkBtn = document.querySelector("header button");
 const body = document.querySelector("body");
 
 // Change to data
