@@ -92,6 +92,21 @@
             transform: rotate(0deg);
         }
     }
+
+    .b-world {
+        
+        header {
+            @include grid-clmn(50px max-content 1fr, 50px);
+
+            a {
+                font-size: 50px;
+            }
+
+            h1 {
+                @include font59;
+            }
+        }
+    }
 }
 
 // Large devices (desktops, 992px and up)

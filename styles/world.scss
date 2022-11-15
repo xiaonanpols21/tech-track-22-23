@@ -1,0 +1,48 @@
+.b-world {
+    height: 100vh;
+    
+    header {
+        @include grid-clmn(30px 250px 1fr, 20px);
+
+        a {
+            display: flex;
+            align-items: center;
+            font-size: 30px;
+            color: $black;
+            transition: .4s;
+
+            &:hover {
+                color: $pink
+            }
+        }
+
+        h1 {
+            @include font26;
+        }
+    }
+
+    main {
+        position: relative;
+        display: block;
+        margin-top: 50px;
+    }
+}
+
+.map-data {
+    position: absolute;
+    width: 1200px;
+    height: 599.5202px;
+}
+
+.svg-map {
+    width: 1200px;
+    height: 599.5202px;
+}
+
+.st0{
+    fill: $black;
+}
+
+.st1{
+    fill: $pruple-light;
+}

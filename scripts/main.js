@@ -1,6 +1,7 @@
 import '../styles/style.scss'
 import * as d3 from 'd3';
 import { html, thresholdScott } from 'd3';
+import gsap from "gsap";
 
 // Data
 const urls = ['./data/bts-albums.json', './data/bts-overview.json'];
@@ -49,7 +50,6 @@ Promise.all(urls.map(u=>fetch(u))).then(responses =>
 });
 
 // Show to the HTML
-
 function changeData(data, albums) {
 	// Header
 	bandName.textContent = data[1].data.artist.profile.name;
@@ -105,12 +105,6 @@ function filterAll() {
 
 firstBtn.addEventListener("click", filterAll);
 
-/*
-function randomNumber(min, max) { // min and max included 
-  return Math.floor(Math.random() * (max - min + 1) + min)
-};
-*/
-
 // Filter voor knoppen https://www.youtube.com/watch?v=OeMuUKedtPc&ab_channel=CodingNepal
 const filterItem = document.querySelector("nav");
 window.onload = () => {
@@ -137,7 +131,3 @@ function addEvents(element) {
 		observer.observe(card)
 	});
 };
-
-
-
-

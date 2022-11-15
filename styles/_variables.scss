@@ -3,6 +3,7 @@ $font-stack: 'Lexend', sans-serif;
 $pink: #FB879E;
 $blue: #8CC5FC;
 $purple: #D1A6C4;
+$pruple-light: #C7B9EC;
 
 $black: #2D2638;
 $white: #ffffff;
@@ -15,6 +16,11 @@ $shadow-3-6: (0 3px 6px rgba($black, .16));
 $shadow-10-10: (0 10px 10px rgba($black, .16));
 
 // Font
+@mixin font59 {
+    font-size: 58px;
+    line-height: 69px;
+}
+
 @mixin font50 {
     font-size: 50px;
     line-height: 60px;
@@ -33,6 +39,11 @@ $shadow-10-10: (0 10px 10px rgba($black, .16));
 @mixin font34 {
     font-size: 34px;
     line-height: 37px;
+}
+
+@mixin font26 {
+    font-size: 26px;
+    line-height: 31px;
 }
 
 @mixin font24 {
