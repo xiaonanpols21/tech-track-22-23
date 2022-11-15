@@ -176,3 +176,11 @@ function dgsap() {
 	gBtn.reversed(!gBtn.reversed());
 };
 darkBtn.addEventListener("click", dgsap);
+
+// Zero state
+gsap.to(".zero-state .play", {
+	rotation: 360,
+	duration: 3,
+	repeat: -1,
+	yoyo: true
+});
