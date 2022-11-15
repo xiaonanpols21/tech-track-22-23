@@ -94,11 +94,12 @@ d3.select(".bolletjes")
 	})
 	// Bron: https://www.dashingd3js.com/d3-tutorial/using-the-svg-coordinate-space-with-d3-js
 	
-	.attr("r", 10)
+	.attr("r", 5)
 	
 	.style('fill', 'orange')
 
 	.append("text")
+	.style("color", "black")
 	.text(function(data) {
 		return data.city;
 	})
