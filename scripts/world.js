@@ -75,10 +75,6 @@ const dataSet = [
 		"y": 217.6862,
 	},
 ]
-
-const xScale = d3.scaleBand().rangeRound([[0, 1200]]).padding(0.1); // 1200 omdat width in sass 1200 is
-const yScale = d3.scaleLinear().domain([0, 940000]).range(599.5202, 0); // 940000 omdat dat hoogste value is van de cities. 599.5202 omdat dat height is in sass
-
 d3.select(".bolletjes")
 	.selectAll("circle")
 	.data(dataSet)
@@ -86,20 +82,27 @@ d3.select(".bolletjes")
 
 	.attr("cx", function (data) {
 		return data.x;
-		//return data => xScale(data.x);
 	})
 	.attr("cy", function (data) {
 		return data.y;
-		//return data => yScale(data.y);
 	})
 	// Bron: https://www.dashingd3js.com/d3-tutorial/using-the-svg-coordinate-space-with-d3-js
 	
-	.attr("r", 10)
+	.attr("r", 5)
 	
-	.style('fill', 'orange')
+	.style('fill', 'orange');
 
-	.append("text")
+// Text
+d3.select(".bolletjes")
+	.selectAll('text')
+	.data(dataSet)
+	.join('text')
 	.text(function(data) {
 		return data.city;
 	})
-;
+	.attr("x", function (data) {
+		return data.x;
+	})
+	.attr("y", function (data) {
+		return data.y;
+	})

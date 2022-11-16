@@ -107,6 +107,23 @@
             }
         }
     }
+
+    .zero-state {
+        display: flex;
+        margin: auto;
+        justify-content: center;
+        align-items: center;
+
+        section {
+            padding: 50px;
+            width: 700px;
+        }
+    }
+
+    .zero-img {
+        width: 550px;
+        height: 400px;
+    }
 }
 
 // Large devices (desktops, 992px and up)
