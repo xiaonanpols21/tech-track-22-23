@@ -14,11 +14,11 @@ For project Tech I am going to make a data visualization about BTS.
 
 ## What is your concept?
 
-In this data visualization you can see the Albums of BTS in order from debut to present.
+In this data visualization you can see the Albums of BTS in order from debut to present. You can also see a map of the 5 countries who listens the most to BTS
 
 ## How can you use your data visualization?
 
-Walk through the timeline of the albums or filter on year.
+Walk through the timeline of the albums or filter on year. See the map.
 
 ## Installation
 
