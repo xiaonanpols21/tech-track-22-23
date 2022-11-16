@@ -23,8 +23,9 @@ const buttons = document.querySelectorAll("nav button");
 const firstBtn = document.querySelector("nav button:first-of-type");
 
 // Zero state
+const zeroBg = document.querySelector("section");
 const zeroImg = document.querySelector("section img");
-const showBtn = document.querySelector("section button");
+const showBtn = document.querySelector(".show-timeline");
 
 // Gsap
 const gBtn = gsap.timeline();
@@ -84,6 +85,8 @@ function changeData(data, albums) {
 		
 	});
 };
+
+// ****************************************
 
 // Knoppen combo cards Robbert Tutorial
 function filter(e) {
@@ -145,31 +148,61 @@ function darkMode() {
 };
 darkBtn.addEventListener("click", darkMode);
 
+// ****************************************
+
 // Gsap
-// Nav buttons
-gsap.fromTo("nav button", 
+// Zero state
+gsap.to(".zero-state .play", {
+	rotation: 360,
+	duration: 3,
+	//repeat: -1
+});
+
+gsap.fromTo(".zero-img", 
 	{
-		x :-200,
-		opacity: 0
+		rotation: -180,
+		transformOrigin: "left bottom"
 	}, {
-		x: 0,
-		opacity: 1,
-		stagger: 0.2,
-		duration: 0.2
+		rotation: 0,
+		duration: 2
 	}
 );
 
-// Header img
-gsap.to("header img", {
-	rotation: 360,
-	duration: 3
-});
+const animation = gsap.timeline();
+animation
+	.fromTo(".zero-state h4", 
+	{
+		y: 400
+	}, {
+		y: 0,
+		duration: 0.5
+	})
+	.fromTo(".zero-state p", 
+	{
+		y: 400
+	}, {
+		y: 0,
+		duraration: 0.5,
+		stagger: 0.2
+	});
+
+gsap.fromTo(".show-timeline",
+	{
+		scale: 5,
+		opacity: 0
+	}, {
+		scale: 1,
+		opacity: 1,
+		duration: 1
+	}
+);
 
 // Reversed bron: https://codepen.io/PointC/pen/WqKyye?editors=0010
 gBtn.to("header button", {
 	rotation: 180,
 	duration: 0.3
 });
+
 gBtn.reversed(true);
 
 function dgsap() {
@@ -177,10 +210,57 @@ function dgsap() {
 };
 darkBtn.addEventListener("click", dgsap);
 
-// Zero state
-gsap.to(".zero-state .play", {
-	rotation: 360,
-	duration: 3,
-	repeat: -1,
-	yoyo: true
-});
+function zeroStateGone() {
+	const Timeout = setTimeout(zeroHidden, 2000);
+	function zeroHidden() {
+		zeroBg.classList.add("hidden");
+	}
+
+	gsap.fromTo(".zero-state", 
+	{
+		opacity: 1
+	}, {
+		opacity: 0,
+		duration: 2
+	})
+
+	gsap.fromTo(".zero-state section", 
+	{
+		scale: 1,
+		opacity: 1
+	}, {
+		scale: 3,
+		opacity: 0,
+		duration: 2
+	});
+
+	gsap.fromTo(".zero-state div", 
+	{
+		scale: 1,
+		opacity: 1
+	}, {
+		scale: 3,
+		opacity: 0,
+		duration: 2
+	});
+
+	// Nav buttons
+	gsap.fromTo("nav button", 
+		{
+			x :-200,
+			opacity: 0
+		}, {
+			x: 0,
+			opacity: 1,
+			stagger: 0.2,
+			duration: 0.2
+		}
+	);
+
+	// Header img
+	gsap.to("header img", {
+		rotation: 360,
+		duration: 3
+	});
+}
+showBtn.addEventListener("click", zeroStateGone);
