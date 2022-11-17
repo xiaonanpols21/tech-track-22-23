@@ -44,6 +44,7 @@ Promise.all(urls.map(u=>fetch(u))).then(responses =>
 
 const dataSet = [
 	{
+		"id": 1, 
 		"city": "Jakarta", 
 		"numberOfListeners": 930904,
 		"x": 672,
@@ -51,24 +52,28 @@ const dataSet = [
 
 	},
 	{
+		"id": 2, 
 		"city": "Macixocity", 
 		"numberOfListeners": 622728,
 		"x": 186.7382,
 		"y": 233.5412,
 	},
 	{
+		"id": 3, 
 		"city": "Tokyo", 
 		"numberOfListeners": 533701,
 		"x": 745,
 		"y": 178,
 	},
 	{
+		"id": 4, 
 		"city": "Santiago", 
 		"numberOfListeners": 532525,
 		"x": 395,
 		"y": 162.5977,
 	},
 	{
+		"id": 5, 
 		"city": "Dalhi", 
 		"numberOfListeners": 519028,
 		"x": 590,
@@ -93,15 +98,14 @@ d3.select(".location")
 	// Bron: https://www.dashingd3js.com/d3-tutorial/using-the-svg-coordinate-space-with-d3-js
 ;
 
-
 // Rect
 d3.select(".location")
 	.selectAll("rect")
 	.data(dataSet)
 	.join("rect")
-	.attr("width", 150)
+	.attr("width", 170)
 	.attr("height", 60)
-	.attr('transform', 'translate(-20, -60)')
+	.attr('transform', 'translate( -40, -60)')
 	.style('fill', '#FB879E')
 	.attr("x", function (data) {
 		return data.x;
@@ -111,6 +115,80 @@ d3.select(".location")
 	})
 ;
 
+// Bg
+d3.select(".d3-bg")
+	.selectAll("rect")
+	.data(dataSet)
+	.join("rect")
+	.attr("width", 170)
+	.attr("height", 60)
+	.attr('transform', 'translate( -35, -55)')
+	.style('fill', 'white')
+	.attr("x", function (data) {
+		return data.x;
+	})
+	.attr("y", function (data) {
+		return data.y;
+	})
+;
+
+// Bolletjes
+d3.select(".d3-bg")
+	.selectAll("circle")
+	.data(dataSet)
+	.join("circle")
+	.attr("r", 5)
+	.attr('transform', 'translate( 5, 5)')
+	.style('fill', 'white')
+
+	.attr("cx", function (data) {
+		return data.x;
+	})
+	.attr("cy", function (data) {
+		return data.y;
+	})
+	// Bron: https://www.dashingd3js.com/d3-tutorial/using-the-svg-coordinate-space-with-d3-js
+;
+
+// Id
+d3.select(".text-3")
+	.selectAll('text')
+	.data(dataSet)
+
+	.join('text')
+	.style("font-size", "23px")
+	.style('fill', 'white')
+	.style("font-weight", "bold")
+	.attr('transform', 'translate( -16, -22)')
+
+	.text(function(data) {
+		return data.id;
+	})
+	.attr("x", function (data) {
+		return data.x;
+	})
+	.attr("y", function (data) {
+		return data.y;
+	})
+;
+
+// Ranking
+d3.select(".ranking")
+	.selectAll("circle")
+	.data(dataSet)
+	.join("circle")
+	.attr("r", 20)
+	.style('fill', '#862A43')
+	.attr('transform', 'translate( -10, -30)')
+
+	.attr("cx", function (data) {
+		return data.x;
+	})
+	.attr("cy", function (data) {
+		return data.y;
+	})
+	// Bron: https://www.dashingd3js.com/d3-tutorial/using-the-svg-coordinate-space-with-d3-js
+;
 
 // Country
 d3.select(".text-1")
@@ -118,10 +196,10 @@ d3.select(".text-1")
 	.data(dataSet)
 
 	.join('text')
-	.style("font-size", "20px")
+	.style("font-size", "18px")
 	.style("font-weight", "bold")
 	.style('fill', 'white')
-	.attr('transform', 'translate(-20, -40)')
+	.attr('transform', 'translate( 20, -35)')
 
 	.text(function(data) {
 		return data.city;
@@ -140,9 +218,9 @@ d3.select(".text-2")
 	.data(dataSet)
 
 	.join('text')
-	.style("font-size", "16px")
+	.style("font-size", "14px")
 	.style('fill', 'white')
-	.attr('transform', 'translate(-20, -20)')
+	.attr('transform', 'translate( 20, -15)')
 
 	.text(function(data) {
 		return data.numberOfListeners;
