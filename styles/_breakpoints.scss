@@ -94,7 +94,8 @@
     }
 
     .b-world {
-        
+        height: 100%;
+
         header {
             @include grid-clmn(50px max-content 1fr, 50px);
 
@@ -123,6 +124,16 @@
     .zero-img {
         width: 550px;
         height: 400px;
+    }
+
+    .map-data {
+        width: 1300px;
+        height: 649.4802px;
+    }
+
+    .svg-map {
+        width: 1300px;
+        height: 649.4802px;
     }
 }
 

@@ -1,6 +1,4 @@
 .b-world {
-    height: 100vh;
-    
     header {
         @include grid-clmn(30px 250px 1fr, 20px);
 
@@ -30,13 +28,10 @@
 
 .map-data {
     position: absolute;
-    width: 1300px;
-    height: 649.4802 pxpx;
 }
 
 .svg-map {
-    width: 1300px;
-    height: 649.4802 pxpx;
+    
 }
 
 .st0{
