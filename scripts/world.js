@@ -124,8 +124,8 @@ d3.select(".d3-bg")
 	.join("rect")
 	.attr("width", 170)
 	.attr("height", 60)
-	.attr('transform', 'translate( -35, -55)')
-	.style('fill', 'white')
+	.attr("transform", "translate( -35, -55)")
+	.style("fill", "white")
 	.attr("x", function (data) {
 		return data.x;
 	})
@@ -140,8 +140,8 @@ d3.select(".d3-bg")
 	.data(dataSet)
 	.join("circle")
 	.attr("r", 5)
-	.attr('transform', 'translate( 5, 5)')
-	.style('fill', 'white')
+	.attr("transform", "translate( 5, 5)")
+	.style("fill", "white")
 
 	.attr("cx", function (data) {
 		return data.x;
@@ -154,14 +154,14 @@ d3.select(".d3-bg")
 
 // Id
 d3.select(".text-3")
-	.selectAll('text')
+	.selectAll("text")
 	.data(dataSet)
 
 	.join('text')
 	.style("font-size", "23px")
-	.style('fill', 'white')
+	.style("fill", "white")
 	.style("font-weight", "bold")
-	.attr('transform', 'translate( -16, -22)')
+	.attr("transform", "translate( -16, -22)")
 
 	.text(function(data) {
 		return data.id;
@@ -180,8 +180,8 @@ d3.select(".ranking")
 	.data(dataSet)
 	.join("circle")
 	.attr("r", 20)
-	.style('fill', '#862A43')
-	.attr('transform', 'translate( -10, -30)')
+	.style("fill", "#862A43")
+	.attr("transform", "translate( -10, -30)")
 
 	.attr("cx", function (data) {
 		return data.x;
@@ -194,14 +194,14 @@ d3.select(".ranking")
 
 // Country
 d3.select(".text-1")
-	.selectAll('text')
+	.selectAll("text")
 	.data(dataSet)
 
-	.join('text')
+	.join("text")
 	.style("font-size", "18px")
 	.style("font-weight", "bold")
-	.style('fill', 'white')
-	.attr('transform', 'translate( 20, -35)')
+	.style("fill", "white")
+	.attr("transform", "translate( 20, -35)")
 
 	.text(function(data) {
 		return data.city;
@@ -219,10 +219,10 @@ d3.select(".text-2")
 	.selectAll('text')
 	.data(dataSet)
 
-	.join('text')
+	.join("text")
 	.style("font-size", "14px")
-	.style('fill', 'white')
-	.attr('transform', 'translate( 20, -15)')
+	.style("fill", "white")
+	.attr("transform", "translate( 20, -15)")
 
 	.text(function(data) {
 		return data.numberOfListeners;

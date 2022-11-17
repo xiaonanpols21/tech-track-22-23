@@ -1,4 +1,4 @@
-import '../styles/style.scss'
+import "../styles/style.scss";
 import * as d3 from 'd3';
 import { html, thresholdScott } from 'd3';
 import gsap from "gsap";
