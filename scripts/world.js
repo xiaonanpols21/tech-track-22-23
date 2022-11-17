@@ -46,8 +46,8 @@ const dataSet = [
 	{
 		"city": "Jakarta", 
 		"numberOfListeners": 930904,
-		"x": 669.2256,
-		"y": 286.5778,
+		"x": 672,
+		"y": 290,
 
 	},
 	{
@@ -59,26 +59,30 @@ const dataSet = [
 	{
 		"city": "Tokyo", 
 		"numberOfListeners": 533701,
-		"x": 737.8455,
-		"y": 175.6565,
+		"x": 745,
+		"y": 178,
 	},
 	{
 		"city": "Santiago", 
 		"numberOfListeners": 532525,
-		"x": 389.5791,
+		"x": 395,
 		"y": 162.5977,
 	},
 	{
 		"city": "Dalhi", 
 		"numberOfListeners": 519028,
-		"x": 586.8019,
-		"y": 217.6862,
+		"x": 590,
+		"y": 220,
 	},
-]
-d3.select(".bolletjes")
+];
+
+// Bolletjes
+d3.select(".location")
 	.selectAll("circle")
 	.data(dataSet)
 	.join("circle")
+	.attr("r", 5)
+	.style('fill', '#FB879E')
 
 	.attr("cx", function (data) {
 		return data.x;
@@ -87,16 +91,38 @@ d3.select(".bolletjes")
 		return data.y;
 	})
 	// Bron: https://www.dashingd3js.com/d3-tutorial/using-the-svg-coordinate-space-with-d3-js
-	
-	.attr("r", 5)
-	
-	.style('fill', 'orange');
+;
 
-// Text
-d3.select(".bolletjes")
+
+// Rect
+d3.select(".location")
+	.selectAll("rect")
+	.data(dataSet)
+	.join("rect")
+	.attr("width", 150)
+	.attr("height", 60)
+	.attr('transform', 'translate(-20, -60)')
+	.style('fill', '#FB879E')
+	.attr("x", function (data) {
+		return data.x;
+	})
+	.attr("y", function (data) {
+		return data.y;
+	})
+;
+
+
+// Country
+d3.select(".text-1")
 	.selectAll('text')
 	.data(dataSet)
+
 	.join('text')
+	.style("font-size", "20px")
+	.style("font-weight", "bold")
+	.style('fill', 'white')
+	.attr('transform', 'translate(-20, -40)')
+
 	.text(function(data) {
 		return data.city;
 	})
@@ -106,3 +132,25 @@ d3.select(".bolletjes")
 	.attr("y", function (data) {
 		return data.y;
 	})
+;
+
+// NumberOfListeners
+d3.select(".text-2")
+	.selectAll('text')
+	.data(dataSet)
+
+	.join('text')
+	.style("font-size", "16px")
+	.style('fill', 'white')
+	.attr('transform', 'translate(-20, -20)')
+
+	.text(function(data) {
+		return data.numberOfListeners;
+	})
+	.attr("x", function (data) {
+		return data.x;
+	})
+	.attr("y", function (data) {
+		return data.y;
+	})
+;
