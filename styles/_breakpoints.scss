@@ -4,6 +4,12 @@
 }
 
 // Medium devices (tablets, 768px and up)
+@media (max-width: 768px) {
+    .d-map {
+        display: none;
+    }
+}
+
 @media (min-width: 768px) {
     body {
         height: 100vh;
@@ -107,6 +113,11 @@
                 @include font59;
             }
         }
+
+        main {
+            margin-top: 20px;
+            height: 100%;
+        }
     }
 
     .zero-state {
@@ -126,14 +137,8 @@
         height: 400px;
     }
 
-    .map-data {
-        width: 1300px;
-        height: 649.4802px;
-    }
-
-    .svg-map {
-        width: 1300px;
-        height: 649.4802px;
+    .m-map {
+        display: none;
     }
 }
 

@@ -22,16 +22,19 @@
     main {
         position: relative;
         display: block;
-        margin-top: 50px;
+        height: 100vh;
     }
 }
 
 .map-data {
     position: absolute;
+    width: 1300px;
+    height: 649.4802px;
 }
 
 .svg-map {
-    
+    width: 1300px;
+    height: 649.4802px;
 }
 
 .st0{
@@ -40,4 +43,18 @@
 
 .st1{
     fill: $pruple-light;
+}
+
+.m-map {
+    padding: 20px;
+
+    h2 {
+        @include font34;
+        text-align: center;
+    }
+
+    img {
+        margin-top: 50px;
+        border-radius: 20px;
+    }
 }

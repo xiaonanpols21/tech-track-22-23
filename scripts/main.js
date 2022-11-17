@@ -26,6 +26,7 @@ const firstBtn = document.querySelector("nav button:first-of-type");
 const zeroBg = document.querySelector("section");
 const zeroImg = document.querySelector("section img");
 const showBtn = document.querySelector(".show-timeline");
+const audio = document.querySelector("audio");
 
 // Gsap
 const gBtn = gsap.timeline();
@@ -210,19 +211,22 @@ function dgsap() {
 };
 darkBtn.addEventListener("click", dgsap);
 
+// Function Zero state button Gsap
 function zeroStateGone() {
-	const Timeout = setTimeout(zeroHidden, 2000);
+	const Timeout = setTimeout(zeroHidden, 1000);
 	function zeroHidden() {
 		zeroBg.classList.add("hidden");
-	}
+	};
+
+	audio.pause();
 
 	gsap.fromTo(".zero-state", 
 	{
 		opacity: 1
 	}, {
 		opacity: 0,
-		duration: 2
-	})
+		duration: 1
+	});
 
 	gsap.fromTo(".zero-state section", 
 	{
@@ -231,7 +235,7 @@ function zeroStateGone() {
 	}, {
 		scale: 3,
 		opacity: 0,
-		duration: 2
+		duration: 1
 	});
 
 	gsap.fromTo(".zero-state div", 
@@ -241,21 +245,20 @@ function zeroStateGone() {
 	}, {
 		scale: 3,
 		opacity: 0,
-		duration: 2
+		duration: 1
 	});
 
 	// Nav buttons
 	gsap.fromTo("nav button", 
-		{
-			x :-200,
-			opacity: 0
-		}, {
-			x: 0,
-			opacity: 1,
-			stagger: 0.2,
-			duration: 0.2
-		}
-	);
+	{
+		x :-200,
+		opacity: 0
+	}, {
+		x: 0,
+		opacity: 1,
+		stagger: 0.2,
+		duration: 0.2
+	});
 
 	// Header img
 	gsap.to("header img", {

@@ -1,6 +1,7 @@
 import '../styles/style.scss'
 import * as d3 from 'd3';
 import { html, thresholdScott } from 'd3';
+import gsap from "gsap";
 
 // Data
 const urls = ['./data/bts-albums.json', './data/bts-overview.json'];
@@ -42,6 +43,7 @@ Promise.all(urls.map(u=>fetch(u))).then(responses =>
 	console.log(country);
 });
 
+// D3
 const dataSet = [
 	{
 		"id": 1, 
@@ -232,3 +234,60 @@ d3.select(".text-2")
 		return data.y;
 	})
 ;
+
+// Gsap
+// Rectangles
+gsap.fromTo(".location", 
+	{
+		y: 400
+	}, {
+		y: 0,
+		duration: 1
+	}
+);
+
+gsap.fromTo(".d3-bg", 
+	{
+		y: 400
+	}, {
+		y: 0,
+		duration: 1
+	}
+);
+
+// Text
+const animation = gsap.timeline();
+animation
+	.fromTo(".text-1", {
+		opacity: 0
+	}, {
+		opacity: 1,
+		duration: 0.5,
+		delay: 1
+	})
+
+	.fromTo(".text-2", {
+		opacity: 0
+	}, {
+		opacity: 1,
+		duration: 0.5 
+	}
+);
+
+gsap.fromTo(".ranking", {
+	scale: 0,
+}, {
+	scale: 1,
+	duration: 0.5,
+	delay: 1
+});
+
+gsap.fromTo(".text-3", {
+	scale: 5,
+	rotation: 360
+}, {
+	scale: 1,
+	rotation: 0,
+	duration: 1,
+	delay: 1
+})
