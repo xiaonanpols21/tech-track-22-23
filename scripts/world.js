@@ -125,6 +125,7 @@ function changeData(country) {
 	;
 
 	// Bg
+	/*
 	d3.select(".d3-bg")
 	.selectAll("rect")
 	.data(country)
@@ -140,8 +141,10 @@ function changeData(country) {
 		return country.y;
 	})
 	;
+	*/
 
 	// Bolletjes
+	/*
 	d3.select(".d3-bg")
 	.selectAll("circle")
 	.data(country)
@@ -158,6 +161,7 @@ function changeData(country) {
 	})
 	// Bron: https://www.dashingd3js.com/d3-tutorial/using-the-svg-coordinate-space-with-d3-js
 	;
+	*/
 
 	// Id
 	d3.select(".text-3")
@@ -246,6 +250,7 @@ function changeData(country) {
 
 // Gsap
 // Rectangles
+/*
 gsap.fromTo(".location", 
 	{
 		y: 400
@@ -299,4 +304,4 @@ gsap.fromTo(".text-3", {
 	rotation: 0,
 	duration: 1,
 	delay: 1
-})
+})*/
