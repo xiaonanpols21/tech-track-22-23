@@ -91,13 +91,13 @@ Promise.all(urls.map(u=>fetch(u))).then(responses =>
 // D3
 function changeData(country) {
 	// Bolletjes
-	/*
+	
 	d3.select(".location")
 	.selectAll("circle")
 	.data(country)
 	.join("circle")
 	.attr("r", 5)
-	.style('fill', '#FB879E')
+	.style('fill', '#862A43')
 
 	.attr("cx", function (country) {
 		return country.x;
@@ -107,7 +107,6 @@ function changeData(country) {
 	})
 	// Bron: https://www.dashingd3js.com/d3-tutorial/using-the-svg-coordinate-space-with-d3-js
 	;
-	*/
 
 	// Rect
 	/*
@@ -175,7 +174,7 @@ function changeData(country) {
 	.attr("r", 20)
 	
 	.style("fill", "#862A43")
-	//.attr("transform", "translate( -10, -30)")
+	.attr("transform", "translate( -10, -30)")
 
 	.attr("cx", function (country) {
 		return country.x;
@@ -191,6 +190,7 @@ function changeData(country) {
 		.duration(200)
 		.style("opacity", 1)
 		.text(`${data.city} ${data.numberOfListeners}`)
+		.style("font-size", "20px")
   	)
 
 	.on("mousemove", (e) =>
@@ -215,7 +215,7 @@ function changeData(country) {
 	.style("font-size", "23px")
 	.style("fill", "white")
 	.style("font-weight", "bold")
-	.attr("transform", "translate( -6, 8)")
+	.attr("transform", "translate( -16, -22)")
 
 	.text(function(country) {
 		return country.id;
@@ -278,16 +278,30 @@ function changeData(country) {
 };
 
 // Gsap
-// Rectangles
-/*
+const animation = gsap.timeline();
+animation
 gsap.fromTo(".location", 
 	{
-		y: 400
+		opacity: 0
 	}, {
-		y: 0,
+		opacity: 1,
 		duration: 1
 	}
-);
+)
+
+gsap.fromTo(".ranking", {
+	scale: 10,
+	rotation: 0
+}, {
+	scale: 1,
+	rotation: 360,
+	duration: 0.5,
+	delay: 0.5
+});
+
+// Rectangles
+/*
+
 
 gsap.fromTo(".d3-bg", 
 	{
@@ -316,14 +330,6 @@ animation
 		duration: 0.5 
 	}
 );
-
-gsap.fromTo(".ranking", {
-	scale: 0,
-}, {
-	scale: 1,
-	duration: 0.5,
-	delay: 1
-});
 
 gsap.fromTo(".text-3", {
 	scale: 5,
