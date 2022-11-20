@@ -91,6 +91,7 @@ Promise.all(urls.map(u=>fetch(u))).then(responses =>
 // D3
 function changeData(country) {
 	// Bolletjes
+	/*
 	d3.select(".location")
 	.selectAll("circle")
 	.data(country)
@@ -106,8 +107,10 @@ function changeData(country) {
 	})
 	// Bron: https://www.dashingd3js.com/d3-tutorial/using-the-svg-coordinate-space-with-d3-js
 	;
+	*/
 
 	// Rect
+	/*
 	d3.select(".location")
 	.selectAll("rect")
 	.data(country)
@@ -123,6 +126,7 @@ function changeData(country) {
 		return country.y;
 	})
 	;
+	*/
 
 	// Bg
 	/*
@@ -163,8 +167,47 @@ function changeData(country) {
 	;
 	*/
 
+	// Ranking
+	d3.select(".ranking")
+	.selectAll("circle")
+	.data(country)
+	.join("circle")
+	.attr("r", 20)
+	
+	.style("fill", "#862A43")
+	//.attr("transform", "translate( -10, -30)")
+
+	.attr("cx", function (country) {
+		return country.x;
+	})
+	.attr("cy", function (country) {
+		return country.y;
+	})
+	// Bron: https://www.dashingd3js.com/d3-tutorial/using-the-svg-coordinate-space-with-d3-js
+	
+	.on("mouseover", (e, data) =>
+		d3.select(".tooltip")
+		.transition()
+		.duration(200)
+		.style("opacity", 1)
+		.text(`${data.city} ${data.numberOfListeners}`)
+  	)
+
+	.on("mousemove", (e) =>
+			d3.select(".tooltip")
+			.style("left", e.pageX + -0 + "px")
+			.style("top", e.pageY + -120 + "px")
+	)
+
+	.on("mouseout", e => 
+		d3.select(".tooltip")
+		.style("opacity", 0)
+	)
+	// Bron: https://codepen.io/vijnv/pen/RwJKBeO?editors=1010
+	;
+
 	// Id
-	d3.select(".text-3")
+	d3.select(".ranking")
 	.selectAll("text")
 	.data(country)
 
@@ -172,7 +215,7 @@ function changeData(country) {
 	.style("font-size", "23px")
 	.style("fill", "white")
 	.style("font-weight", "bold")
-	.attr("transform", "translate( -16, -22)")
+	.attr("transform", "translate( -6, 8)")
 
 	.text(function(country) {
 		return country.id;
@@ -185,25 +228,8 @@ function changeData(country) {
 	})
 	;
 
-	// Ranking
-	d3.select(".ranking")
-	.selectAll("circle")
-	.data(country)
-	.join("circle")
-	.attr("r", 20)
-	.style("fill", "#862A43")
-	.attr("transform", "translate( -10, -30)")
-
-	.attr("cx", function (country) {
-		return country.x;
-	})
-	.attr("cy", function (country) {
-		return country.y;
-	})
-	// Bron: https://www.dashingd3js.com/d3-tutorial/using-the-svg-coordinate-space-with-d3-js
-	;
-
 	// Country
+	/*
 	d3.select(".text-1")
 	.selectAll("text")
 	.data(country)
@@ -224,8 +250,10 @@ function changeData(country) {
 		return country.y;
 	})
 	;
+	*/
 
 	// NumberOfListeners
+	/*
 	d3.select(".text-2")
 	.selectAll('text')
 	.data(country)
@@ -246,6 +274,7 @@ function changeData(country) {
 		return country.y;
 	})
 	;
+	*/
 };
 
 // Gsap

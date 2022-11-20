@@ -58,3 +58,27 @@
         border-radius: 20px;
     }
 }
+
+.tooltip {
+    position: absolute;
+    padding: 20px;
+    width: fit-content;
+    background-color: $red;
+    border-radius: 20px;
+    color: $white;
+    opacity: 0;
+
+    h2 {
+        @include font24;
+    }
+
+    p {
+        @include font18;
+        margin-top: -5px;
+    }
+}
+
+.hover {   
+    background-color: $red;
+
+}
