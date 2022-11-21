@@ -1,40 +1,13 @@
 import "../styles/style.scss"; 
-//import * as variables from "./variables.js"; 
+
+import * as v from "./variables.js"; 
+
 import * as d3 from 'd3';
 import { html, thresholdScott } from 'd3';
-import gsap from "gsap";
-
-// Data
-const urls = ['./data/bts-albums.json', './data/bts-overview.json'];
-
-// Dark Mode
-const darkBtn = document.querySelector("header button");
-const body = document.querySelector("body");
-
-// Change to data
-// Header
-const profilePic = document.querySelector("header img")
-const bandName = document.querySelector("h1");
-const followers = document.querySelector("header p:first-of-type a");
-const listeners = document.querySelector("header p:last-of-type a");
-
-// Nav
-const main = document.querySelector("main");
-const buttons = document.querySelectorAll("nav button");
-const firstBtn = document.querySelector("nav button:first-of-type");
-
-// Zero state
-const zeroBg = document.querySelector("section");
-const zeroImg = document.querySelector("section img");
-const showBtn = document.querySelector(".show-timeline");
-const audio = document.querySelector("audio");
-
-
-// Gsap
-const gBtn = gsap.timeline();
+//import gsap from "gsap";
 
 // Fetch data, Stackoverflow https://stackoverflow.com/questions/31710768/how-can-i-fetch-an-array-of-urls-with-promise-all
-Promise.all(urls.map(u=>fetch(u))).then(responses =>
+Promise.all(v.urls.map(u=>fetch(u))).then(responses =>
     Promise.all(responses.map(res => res.json()))
 ).then(data => {
 
@@ -59,13 +32,13 @@ Promise.all(urls.map(u=>fetch(u))).then(responses =>
 // Show to the HTML
 function changeData(data, albums) {
 	// Header
-	bandName.textContent = data[1].data.artist.profile.name;
-	followers.textContent = data[1].data.artist.stats.followers;
-	listeners.textContent = data[1].data.artist.stats.monthlyListeners;
-	profilePic.src = data[1].data.artist.visuals.gallery.items[0].sources[0].url;
+	v.bandName.textContent = data[1].data.artist.profile.name;
+	v.followers.textContent = data[1].data.artist.stats.followers;
+	v.listeners.textContent = data[1].data.artist.stats.monthlyListeners;
+	v.profilePic.src = data[1].data.artist.visuals.gallery.items[0].sources[0].url;
 
 	// Zero state
-	zeroImg.src =  data[1].data.artist.visuals.gallery.items[1].sources[0].url;
+	v.zeroImg.src =  data[1].data.artist.visuals.gallery.items[1].sources[0].url;
 
 	// ForEach Albums
 	albums.forEach((item) => {
@@ -81,7 +54,7 @@ function changeData(data, albums) {
 			<img src="${albumImg}" alt="${name}">
 			<a class="play" href="${play}" target="_blank"><i class="fa-solid fa-play"></i></a>
 		</article>`
-		main.insertAdjacentHTML("beforeend", html );
+		v.main.insertAdjacentHTML("beforeend", html );
 		// Web API, insertAdjacentHTML is om het te tonen in de main. Beforeend betekend: Before the end of the element (last child), W3Schools https://www.w3schools.com/jsref/met_node_insertadjacenthtml.asp
 		
 		addEvents(html);
@@ -104,7 +77,7 @@ function filter(e) {
 	});
 };
 
-buttons.forEach(button => {
+v.buttons.forEach(button => {
 	button.addEventListener("click", filter)
 });
 
@@ -116,7 +89,7 @@ function filterAll() {
 	});
 };
 
-firstBtn.addEventListener("click", filterAll);
+v.firstBtn.addEventListener("click", filterAll);
 
 // Filter voor knoppen https://www.youtube.com/watch?v=OeMuUKedtPc&ab_channel=CodingNepal
 const filterItem = document.querySelector("nav");
@@ -149,7 +122,7 @@ function addEvents(element) {
 function darkMode() {
 	body.classList.toggle("dark-mode");
 };
-darkBtn.addEventListener("click", darkMode);
+v.darkBtn.addEventListener("click", darkMode);
 
 // ****************************************
 
@@ -201,26 +174,26 @@ gsap.fromTo(".show-timeline",
 );
 
 // Reversed bron: https://codepen.io/PointC/pen/WqKyye?editors=0010
-gBtn.to("header button", {
+v.gBtn.to("header button", {
 	rotation: 180,
 	duration: 0.3
 });
 
-gBtn.reversed(true);
+v.gBtn.reversed(true);
 
 function dgsap() {
-	gBtn.reversed(!gBtn.reversed());
+	v.gBtn.reversed(!gBtn.reversed());
 };
-darkBtn.addEventListener("click", dgsap);
+v.darkBtn.addEventListener("click", dgsap);
 
 // Function Zero state button Gsap
 function zeroStateGone() {
 	const Timeout = setTimeout(zeroHidden, 1000);
 	function zeroHidden() {
-		zeroBg.classList.add("hidden");
+		v.zeroBg.classList.add("hidden");
 	};
 
-	audio.pause();
+	v.audio.pause();
 
 	gsap.fromTo(".zero-state", 
 	{
@@ -268,4 +241,4 @@ function zeroStateGone() {
 		duration: 3
 	});
 }
-showBtn.addEventListener("click", zeroStateGone);
+v.showBtn.addEventListener("click", zeroStateGone);
