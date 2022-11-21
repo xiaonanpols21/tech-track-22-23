@@ -26,6 +26,10 @@
     }
 }
 
+.ranking text {
+    pointer-events: none;
+}
+
 .map-data {
     position: absolute;
     width: 1300px;
@@ -68,15 +72,6 @@
     box-shadow: $shadow-10-10;
     color: $white;
     opacity: 0;
-
-    h2 {
-        @include font24;
-    }
-
-    p {
-        @include font18;
-        margin-top: -5px;
-    }
 }
 
 .hover {   

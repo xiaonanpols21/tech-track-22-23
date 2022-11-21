@@ -28,7 +28,7 @@ const audio = document.querySelector("audio");
 // Gsap
 const gBtn = gsap.timeline();
 
-export default {
+export {
 
     urls,
 
