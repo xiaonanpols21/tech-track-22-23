@@ -26,6 +26,10 @@
     }
 }
 
+.ranking text {
+    pointer-events: none;
+}
+
 .map-data {
     position: absolute;
     width: 1300px;
@@ -57,4 +61,20 @@
         margin-top: 50px;
         border-radius: 20px;
     }
+}
+
+.tooltip {
+    position: absolute;
+    padding: 20px;
+    width: fit-content;
+    background-color: $red;
+    border-radius: 20px;
+    box-shadow: $shadow-10-10;
+    color: $white;
+    opacity: 0;
+}
+
+.hover {   
+    background-color: $red;
+
 }

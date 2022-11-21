@@ -1,3 +1,8 @@
+import gsap from "gsap";
+
+// Data
+const urls = ['./data/bts-albums.json', './data/bts-overview.json'];
+
 // Dark Mode
 const darkBtn = document.querySelector("header button");
 const body = document.querySelector("body");
@@ -20,7 +25,13 @@ const zeroImg = document.querySelector("section img");
 const showBtn = document.querySelector(".show-timeline");
 const audio = document.querySelector("audio");
 
-export default {
+// Gsap
+const gBtn = gsap.timeline();
+
+export {
+
+    urls,
+
     darkBtn,
     body,
 
@@ -37,4 +48,6 @@ export default {
     zeroImg,
     showBtn,
     audio,
+
+    gBtn
 };

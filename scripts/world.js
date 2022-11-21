@@ -1,20 +1,16 @@
 import '../styles/style.scss'
-import * as d3 from 'd3';
-import { html, thresholdScott } from 'd3';
+
+// Import JS files
+import * as v from "./variables.js"; 
+import * as d from "./d3.js"; 
+
 import gsap from "gsap";
-
-// Data
-const urls = ['./data/bts-albums.json', './data/bts-overview.json'];
-
-// Dark Mode
-const darkBtn = document.querySelector("header button");
-const body = document.querySelector("body");
 
 // Dark Mode
 function darkMode() {
 	body.classList.toggle("dark-mode");
 };
-darkBtn.addEventListener("click", darkMode);
+v.darkBtn.addEventListener("click", darkMode);
 
 const dataSet = [
 	{
@@ -50,7 +46,7 @@ const dataSet = [
 ];
 
 // Fetch data, Stackoverflow https://stackoverflow.com/questions/31710768/how-can-i-fetch-an-array-of-urls-with-promise-all
-Promise.all(urls.map(u=>fetch(u))).then(responses =>
+Promise.all(v.urls.map(u=>fetch(u))).then(responses =>
     Promise.all(responses.map(res => res.json()))
 ).then(data => {
 
@@ -83,225 +79,28 @@ Promise.all(urls.map(u=>fetch(u))).then(responses =>
 	})
 	
 	console.log(country);
-
-	changeData(country);
+	d.changeData(country);
 
 });
-
-// D3
-function changeData(country) {
-	// Bolletjes
-	d3.select(".location")
-	.selectAll("circle")
-	.data(country)
-	.join("circle")
-	.attr("r", 5)
-	.style('fill', '#FB879E')
-
-	.attr("cx", function (country) {
-		return country.x;
-	})
-	.attr("cy", function (country) {
-		return country.y;
-	})
-	// Bron: https://www.dashingd3js.com/d3-tutorial/using-the-svg-coordinate-space-with-d3-js
-	;
-
-	// Rect
-	d3.select(".location")
-	.selectAll("rect")
-	.data(country)
-	.join("rect")
-	.attr("width", 180)
-	.attr("height", 60)
-	.attr('transform', 'translate( -40, -60)')
-	.style('fill', '#FB879E')
-	.attr("x", function (country) {
-		return country.x;
-	})
-	.attr("y", function (country) {
-		return country.y;
-	})
-	;
-
-	// Bg
-	/*
-	d3.select(".d3-bg")
-	.selectAll("rect")
-	.data(country)
-	.join("rect")
-	.attr("width", 180)
-	.attr("height", 60)
-	.attr("transform", "translate( -35, -55)")
-	.style("fill", "white")
-	.attr("x", function (country) {
-		return country.x;
-	})
-	.attr("y", function (country) {
-		return country.y;
-	})
-	;
-	*/
-
-	// Bolletjes
-	/*
-	d3.select(".d3-bg")
-	.selectAll("circle")
-	.data(country)
-	.join("circle")
-	.attr("r", 5)
-	.attr("transform", "translate( 5, 5)")
-	.style("fill", "white")
-
-	.attr("cx", function (country) {
-		return country.x;
-	})
-	.attr("cy", function (country) {
-		return country.y;
-	})
-	// Bron: https://www.dashingd3js.com/d3-tutorial/using-the-svg-coordinate-space-with-d3-js
-	;
-	*/
-
-	// Id
-	d3.select(".text-3")
-	.selectAll("text")
-	.data(country)
-
-	.join('text')
-	.style("font-size", "23px")
-	.style("fill", "white")
-	.style("font-weight", "bold")
-	.attr("transform", "translate( -16, -22)")
-
-	.text(function(country) {
-		return country.id;
-	})
-	.attr("x", function (country) {
-		return country.x;
-	})
-	.attr("y", function (country) {
-		return country.y;
-	})
-	;
-
-	// Ranking
-	d3.select(".ranking")
-	.selectAll("circle")
-	.data(country)
-	.join("circle")
-	.attr("r", 20)
-	.style("fill", "#862A43")
-	.attr("transform", "translate( -10, -30)")
-
-	.attr("cx", function (country) {
-		return country.x;
-	})
-	.attr("cy", function (country) {
-		return country.y;
-	})
-	// Bron: https://www.dashingd3js.com/d3-tutorial/using-the-svg-coordinate-space-with-d3-js
-	;
-
-	// Country
-	d3.select(".text-1")
-	.selectAll("text")
-	.data(country)
-
-	.join("text")
-	.style("font-size", "18px")
-	.style("font-weight", "bold")
-	.style("fill", "white")
-	.attr("transform", "translate( 20, -35)")
-
-	.text(function(country) {
-		return country.city;
-	})
-	.attr("x", function (country) {
-		return country.x;
-	})
-	.attr("y", function (country) {
-		return country.y;
-	})
-	;
-
-	// NumberOfListeners
-	d3.select(".text-2")
-	.selectAll('text')
-	.data(country)
-
-	.join("text")
-	.style("font-size", "14px")
-	.style("fill", "white")
-	.attr("transform", "translate( 20, -15)")
-
-	.text(function(country) {
-		return country.numberOfListeners;
-		d3.format(".")(playCountSet[0].count);
-	})
-	.attr("x", function (country) {
-		return country.x;
-	})
-	.attr("y", function (country) {
-		return country.y;
-	})
-	;
-};
 
 // Gsap
-// Rectangles
-/*
-gsap.fromTo(".location", 
-	{
-		y: 400
-	}, {
-		y: 0,
-		duration: 1
-	}
-);
-
-gsap.fromTo(".d3-bg", 
-	{
-		y: 400
-	}, {
-		y: 0,
-		duration: 1
-	}
-);
-
-// Text
 const animation = gsap.timeline();
 animation
-	.fromTo(".text-1", {
+gsap.fromTo(".location", 
+	{
 		opacity: 0
 	}, {
 		opacity: 1,
-		duration: 0.5,
-		delay: 1
-	})
-
-	.fromTo(".text-2", {
-		opacity: 0
-	}, {
-		opacity: 1,
-		duration: 0.5 
+		duration: 1
 	}
-);
+)
 
 gsap.fromTo(".ranking", {
-	scale: 0,
+	scale: 10,
+	rotation: 0
 }, {
 	scale: 1,
+	rotation: 360,
 	duration: 0.5,
-	delay: 1
+	delay: 0.5
 });
-
-gsap.fromTo(".text-3", {
-	scale: 5,
-	rotation: 360
-}, {
-	scale: 1,
-	rotation: 0,
-	duration: 1,
-	delay: 1
-})*/
