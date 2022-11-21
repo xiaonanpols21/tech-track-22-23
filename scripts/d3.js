@@ -39,9 +39,7 @@ function changeData(country) {
 	// Bron: https://www.dashingd3js.com/d3-tutorial/using-the-svg-coordinate-space-with-d3-js
 	
 	.on("mouseover", (e, data) => {
-		//const prettyNumber = d3.formatDefaultLocale(',')(data.numberOfListeners);
 		const prettyNumber = d3.format(',')(data.numberOfListeners).replace(',', '.')
-
 		d3.select(".tooltip")
 		.html(`<strong>${data.city}</strong> ${prettyNumber}`)
 		//.format(",")(data.numberOfListeners[0].count)
