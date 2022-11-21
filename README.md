@@ -1,6 +1,6 @@
 # Tech-track-22-23
 
-![cover](https://github.com/xiaonanpols21/block-tech-v2/blob/main/public/img-wiki/cover.jpg)
+![cover](https://github.com/xiaonanpols21/tech-track-22-23/blob/main/images/wiki/cover.jpg)
 
 Here is my project for Information Design Tech-drack. Read [Wiki](https://github.com/xiaonanpols21/tech-track-22-23/wiki) for further information.
 

@@ -8,7 +8,7 @@ import gsap from "gsap";
 
 // Dark Mode
 function darkMode() {
-	body.classList.toggle("dark-mode");
+	v.body.classList.toggle("dark-mode");
 };
 v.darkBtn.addEventListener("click", darkMode);
 
