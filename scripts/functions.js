@@ -60,9 +60,30 @@ function darkMode() {
 };
 v.darkBtn.addEventListener("click", darkMode);
 
+// Barchart
+v.barSec.classList.add("hidden");
+v.crossBtn.classList.add("hidden");
+
+function showBar() {
+	v.barSec.classList.remove("hidden");
+	v.crossBtn.classList.remove("hidden");
+	v.barBtn.classList.add("hidden")
+
+}
+v.barBtn.addEventListener("click", showBar);
+
+function closeBar() {
+	v.barSec.classList.add("hidden");
+	v.crossBtn.classList.add("hidden");
+	v.barBtn.classList.remove("hidden")
+}
+v.crossBtn.addEventListener("click", closeBar);
+
 export {
     filter,
     filterAll,
     addEvents,
-    darkMode
+    darkMode,
+	showBar,
+	closeBar
 }

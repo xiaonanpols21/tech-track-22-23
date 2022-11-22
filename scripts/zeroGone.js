@@ -4,10 +4,12 @@ import gsap from "gsap";
 
 // Function Zero state button Gsap
 function zeroStateGone() {
+
 	const Timeout = setTimeout(zeroHidden, 1000);
 	function zeroHidden() {
 		v.zeroBg.classList.add("hidden");
 	};
+	
 
 	v.audio.pause();
 

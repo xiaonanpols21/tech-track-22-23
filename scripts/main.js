@@ -2,12 +2,13 @@ import "../styles/style.scss";
 
 // Import JS files
 import * as v from "./variables.js"; 
+import * as d from "./d3-main.js"; 
 import * as func from "./functions.js"; 
-//import * as gsap from "./gsap.js"; 
+import * as gsap from "./gsap.js"; 
 import * as zero from "./zeroGone.js"; 
 
 import * as d3 from 'd3';
-import { html, thresholdScott } from 'd3';
+import { cross, html, thresholdScott } from 'd3';
 
 // Fetch data, Stackoverflow https://stackoverflow.com/questions/31710768/how-can-i-fetch-an-array-of-urls-with-promise-all
 Promise.all(v.urls.map(u=>fetch(u))).then(responses =>
@@ -28,16 +29,28 @@ Promise.all(v.urls.map(u=>fetch(u))).then(responses =>
 	}
 	console.log(order(albums));
 
+	// Tel hoeveel albums er zijn van welk jaar
 	// Bron: https://stackoverflow.com/questions/51067921/javascript-count-key-value-pairs
-	const newArray = Object.values(albums.reduce((c, {year}) => {
-		c[year] = c[year] || {year: year, count: 0};
-		c[year].count++;
-		return c;
-	}, {}));
+	const countMap = {}
+	for(const album of albums) {
+		if(album.date.year in countMap) {
+			countMap[album.date.year] = countMap[album.date.year] + 1;
+		} else {
+			countMap[album.date.year] = 1;
+		}
+	};
 
-	console.log(newArray);
+	const countAlbum = []
+	Object.keys(countMap).forEach(year => {
+		countAlbum.push({
+			year,
+			count: countMap[year]
+		})
+	});
+	console.log(countAlbum)
 
 	changeData(data, albums);
+	d.countData(countAlbum);
 });
 
 // Show to the HTML
@@ -69,122 +82,5 @@ function changeData(data, albums) {
 		// Web API, insertAdjacentHTML is om het te tonen in de main. Beforeend betekend: Before the end of the element (last child), W3Schools https://www.w3schools.com/jsref/met_node_insertadjacenthtml.asp
 		
 		func.addEvents(html);
-		
 	});
 };
-
-const dataSet = [
-	{"Jaar":2013,"Aantal":2},
-	{"Jaar":2014,"Aantal":4},
-	{"Jaar":2015,"Aantal":2},
-	{"Jaar":2016,"Aantal":3},
-	{"Jaar":2017,"Aantal":2},
-	{"Jaar":2018,"Aantal":3},
-	{"Jaar":2019,"Aantal":1},
-	{"Jaar":2020,"Aantal":3},
-	{"Jaar":2021,"Aantal":0},
-	{"Jaar":2022,"Aantal":1},
-]
-
-// D3
-const chartWidth = 700
-const chartHeight = 500
-
-const xScale = d3.scaleLinear()
-	.domain([0, d3.max(dataSet, d => d.Aantal)])
-	.range([0, chartWidth]);
-
-const yScale = d3.scaleBand()
-	.domain(d3.map(dataSet, d => d.Jaar))
-	.range([0, chartHeight])
-	.paddingInner(0.05);
-
-// Bar color func
-function colorPicker(d) {
-	if (d.Aantal <= 2) {
-		return "#FB879E";
-	} else if (d.Aantal > 2) {
-		return "#8CC5FC";
-	}
-}
-// Bron: https://codepen.io/bluelegion/pen/EyJyvx?editors=0010
-
-d3.select('.bars')
-	.selectAll('rect')
-	.data(dataSet)
-	.join('rect')
-	.attr('height', 30)
-	.attr("rx", "15")
-	
-	.style("fill", function(d, i) {
-		return  colorPicker(d); 
-	})
-
-	.attr('width', d => xScale(d.Aantal))
-	.attr('y', d => yScale(d.Jaar))
-
-	// Hove effect tooltip
-	.on("mouseover touchstart", (e, d) =>
-		d3
-		.select(".tooltipI")
-		.html(`<strong>${d.Jaar}:</strong> ${d.Aantal} album(s)`)
-		.transition()
-		.duration(200)
-		.style("opacity", 1)
-		
-	)
-
-	.on("mousemove", (e) =>
-		d3
-		.select(".tooltipI")
-		.style("left", e.pageX - 250 + "px")
-		.style("top", e.pageY - 20 + "px")
-	)
-
-	.on("mouseout", e => d3.select(".tooltipI").style("opacity", 0)
-	);
-;
-
-d3.select('.labels')
-	.selectAll('text')
-	.data(dataSet)
-	.join('text')
-	.attr('y', d => yScale(d.Jaar) + 15)
-	.text(d => d.Jaar)
-;
-
-// Lagenda
-d3.select(".legenda-1")
-	.append("circle")
-	.attr("cx", 20)
-	.attr("cy", 550)
-	.attr("r", 20)
-	.style("fill", "#FB879E")
-;
-
-d3.select(".legenda-1")
-	.append("text")
-	.attr("x", 50)
-	.attr("y", 550)
-	.text("2 or less albums")
-	.style("font-size", "20px")
-	.attr("alignment-baseline","middle")
-;
-
-d3.select(".legenda-2")
-	.append("circle")
-	.attr("cx", 260)
-	.attr("cy", 550) 
-	.attr("r", 20)
-	.style("fill", "#8CC5FC")
-;
-
-d3.select(".legenda-2")
-	.append("text")
-	.attr("x", 290)
-	.attr("y", 550)
-	.text("More than 2 albums")
-	.style("font-size", "20px")
-	.attr("alignment-baseline","middle")
-;
-// Bron: https://d3-graph-gallery.com/graph/custom_legend.html

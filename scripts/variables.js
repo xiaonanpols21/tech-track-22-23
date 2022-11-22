@@ -20,10 +20,15 @@ const buttons = document.querySelectorAll("nav button");
 const firstBtn = document.querySelector("nav button:first-of-type");
 
 // Zero state
-const zeroBg = document.querySelector("section");
-const zeroImg = document.querySelector("section img");
+const zeroBg = document.querySelector(".zero-state");
+const zeroImg = document.querySelector(".zero-state img");
 const showBtn = document.querySelector(".show-timeline");
 const audio = document.querySelector("audio");
+
+// Barchart
+const barBtn = document.querySelector("#bar-btn");
+const crossBtn = document.querySelector("#cross-btn")
+const barSec = document.querySelector(".barchart");
 
 // Gsap
 const gBtn = gsap.timeline();
@@ -48,6 +53,10 @@ export {
     zeroImg,
     showBtn,
     audio,
+
+    barBtn,
+    crossBtn,
+    barSec,
 
     gBtn
 };
