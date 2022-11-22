@@ -6,7 +6,6 @@ import gsap from "gsap";
 gsap.to(".zero-state .play", {
 	rotation: 360,
 	duration: 3,
-	//repeat: -1
 });
 
 gsap.fromTo(".zero-img", 
@@ -33,7 +32,6 @@ animation
 		y: 400
 	}, {
 		y: 0,
-		duraration: .5,
 		stagger: .2
 	});
 
