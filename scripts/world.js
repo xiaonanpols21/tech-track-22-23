@@ -50,28 +50,17 @@ Promise.all(v.urls.map(u=>fetch(u))).then(responses =>
     Promise.all(responses.map(res => res.json()))
 ).then(data => {
 
-	// Make new array from only the Albums
-	const albums = [];
-	data[0].data.artist.discography.albums.items.forEach(item => {
-		albums.push(item.releases.items[0]);
-	});
-
-	// Sort from debut to present, Freecodecamp
-	function order(albums) {
-		return albums.sort(function(a, b) {
-			return a === b ? 0 : a < b ? 1 : -1;
-		})
-	}
-
-	// Gwet only countries of the full dataset
+	// Get only countries of the full dataset
 	const country = data[1].data.artist.stats.topCities.items.map(item => {
 		return item;
 	});
 
 	//Add dataSet to country dataset
 	country.map(e => {
+		
 		console.log(e.city)
-		let cityLocation = dataSet.filter(d => d.city === e.city);
+		const cityLocation = dataSet.filter(d => d.city === e.city);
+
 		e.x = cityLocation[0].x;
 		e.y = cityLocation[0].y;
 		e.id = cityLocation[0].id;
@@ -80,7 +69,6 @@ Promise.all(v.urls.map(u=>fetch(u))).then(responses =>
 	
 	console.log(country);
 	d.changeData(country);
-
 });
 
 // Gsap
@@ -91,16 +79,18 @@ gsap.fromTo(".location",
 		opacity: 0
 	}, {
 		opacity: 1,
-		duration: 1
+		duration: 1,
+		
 	}
 )
 
 gsap.fromTo(".ranking", {
 	scale: 10,
-	rotation: 0
+	rotation: 0,
 }, {
 	scale: 1,
 	rotation: 360,
 	duration: 0.5,
-	delay: 0.5
+	delay: 0.5,
+	
 });

@@ -40,10 +40,10 @@ function changeData(country) {
 	
 	.on("mouseover", (e, data) => {
 		const prettyNumber = d3.format(',')(data.numberOfListeners).replace(',', '.')
+
 		d3.select(".tooltip")
-		.html(`<strong>${data.city}</strong> ${prettyNumber}`)
-		//.format(",")(data.numberOfListeners[0].count)
-		
+		.html(`<strong>${data.city}:</strong> ${prettyNumber}`)
+
 		.transition()
 		.duration(200)
 		.style("opacity", 1)

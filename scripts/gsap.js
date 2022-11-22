@@ -18,7 +18,7 @@ gsap.fromTo(".zero-img",
 		duration: 2
 	}
 );
-
+ 
 const animation = gsap.timeline();
 animation
 	.fromTo(".zero-state h4", 
