@@ -6,6 +6,8 @@ import * as d from "./d3.js";
 
 import gsap from "gsap";
 
+const darkBtn = document.querySelector("header button");
+
 // Dark Mode
 function darkMode() {
 	v.body.classList.toggle("dark-mode");
@@ -90,7 +92,23 @@ gsap.fromTo(".ranking", {
 }, {
 	scale: 1,
 	rotation: 360,
-	duration: 0.5,
-	delay: 0.5,
+	duration: .5,
+	delay: .5,
 	
 });
+
+// Reversed bron: https://codepen.io/PointC/pen/WqKyye?editors=0010
+v.gBtn.to("header button", {
+	rotation: 180,
+	duration: .3
+});
+
+v.gBtn.reversed(true);
+
+function dgsap() {
+	v.gBtn.reversed(!v.gBtn.reversed());
+};
+darkBtn.addEventListener("click", dgsap);
+
+
+

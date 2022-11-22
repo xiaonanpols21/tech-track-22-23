@@ -4,6 +4,7 @@ import "../styles/style.scss";
 import * as v from "./variables.js"; 
 import * as func from "./functions.js"; 
 import * as gsap from "./gsap.js"; 
+import * as zero from "./zeroGone.js"; 
 
 import * as d3 from 'd3';
 import { html, thresholdScott } from 'd3';

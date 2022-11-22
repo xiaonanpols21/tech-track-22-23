@@ -56,7 +56,7 @@ function addEvents(element) {
 
 // Dark mode button
 function darkMode() {
-	body.classList.toggle("dark-mode");
+	v.body.classList.toggle("dark-mode");
 };
 v.darkBtn.addEventListener("click", darkMode);
 
