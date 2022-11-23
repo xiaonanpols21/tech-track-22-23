@@ -1,5 +1,5 @@
 import * as d3 from 'd3';
-import { html, thresholdScott } from 'd3';
+import { count, html, thresholdScott } from 'd3';
 
 function countData(countAlbum) {
 	const chartWidth = 700
@@ -46,7 +46,6 @@ function countData(countAlbum) {
 			.transition()
 			.duration(200)
 			.style("opacity", 1)
-			
 		)
 
 		.on("mousemove", (e) =>
@@ -103,6 +102,7 @@ function countData(countAlbum) {
 		.attr("alignment-baseline","middle")
 	;
 	// Bron: https://d3-graph-gallery.com/graph/custom_legend.html
+
 };
 
 export {

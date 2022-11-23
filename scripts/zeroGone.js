@@ -10,7 +10,6 @@ function zeroStateGone() {
 		v.zeroBg.classList.add("hidden");
 	};
 	
-
 	v.audio.pause();
 
 	gsap.fromTo(".zero-state", 

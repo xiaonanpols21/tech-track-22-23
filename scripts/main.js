@@ -31,20 +31,20 @@ Promise.all(v.urls.map(u=>fetch(u))).then(responses =>
 
 	// Tel hoeveel albums er zijn van welk jaar
 	// Bron: https://stackoverflow.com/questions/51067921/javascript-count-key-value-pairs
-	const countMap = {}
+	const countObj = {}
 	for(const album of albums) {
-		if(album.date.year in countMap) {
-			countMap[album.date.year] = countMap[album.date.year] + 1;
+		if(album.date.year in countObj) {
+			countObj[album.date.year] = countObj[album.date.year] + 1;
 		} else {
-			countMap[album.date.year] = 1;
+			countObj[album.date.year] = 1;
 		}
 	};
 
 	const countAlbum = []
-	Object.keys(countMap).forEach(year => {
+	Object.keys(countObj).forEach(year => {
 		countAlbum.push({
 			year,
-			count: countMap[year]
+			count: countObj[year]
 		})
 	});
 	console.log(countAlbum)
