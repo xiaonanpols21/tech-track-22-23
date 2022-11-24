@@ -22,12 +22,51 @@ function countData(countAlbum) {
 			return "#8CC5FC";
 		}
 	}
+
+	function opacityPicker(d) {
+		if (d.count <= 2) {
+			return "0";
+		} else if (d.count > 2) {
+			return "0";
+		}
+	}
+
 	// Bron: https://codepen.io/bluelegion/pen/EyJyvx?editors=0010
 
-	d3.select('.bars')
+	function update(countAlbum) {
+		d3.select('.bars')
 		.selectAll('rect')
 		.data(countAlbum)
-		.join('rect')
+
+		//.join('rect')
+		.join(
+			function(enter) {
+				return enter.append("rect")
+				.style("opacity", 1);
+				
+			},
+			function(update) {
+				return update.style("opacity", 0);
+			}
+		)
+
+		/*
+		.join(
+			function(enter) {
+				return enter.append("rect")
+				//.style("opacity", 1);
+				.style("opacity", function(d, i) {
+					return  opacityPicker(d); 
+				})
+				
+			},
+			function(update) {
+				return update.style("opacity", function(d, i) {
+					return  opacityPicker(d); 
+				})
+			}
+		)*/
+
 		.attr('height', 30)
 		.attr("rx", "15")
 		
@@ -57,15 +96,27 @@ function countData(countAlbum) {
 
 		.on("mouseout", e => d3.select(".tooltipI").style("opacity", 0)
 		);
-	;
+		;
 
-	d3.select('.labels')
+		d3.select('.labels')
 		.selectAll('text')
 		.data(countAlbum)
 		.join('text')
 		.attr('y', d => yScale(d.year) + 15)
 		.text(d => d.year)
-	;
+		;
+	}
+
+	function updateAll() {
+		update(countAlbum);
+	};
+	updateAll();
+
+	d3.select(".btn-test")
+		.on("click", updateAll);
+	// Bron: https://codepen.io/pen
+	
+	//update(countAlbum);
 
 	// Lagenda
 	d3.select(".legenda-1")

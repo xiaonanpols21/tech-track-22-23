@@ -59,6 +59,8 @@ function beginAnimation() {
 			duration: 1
 		}
 	);
+
+	v.audio.pause();
 };
 
 // Reversed bron: https://codepen.io/PointC/pen/WqKyye?editors=0010
