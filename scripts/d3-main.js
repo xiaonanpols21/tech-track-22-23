@@ -47,25 +47,11 @@ function countData(countAlbum) {
 			},
 			function(update) {
 				return update.style("opacity", 0);
+			},
+			function(exit) {
+				return exit.remove();
 			}
 		)
-
-		/*
-		.join(
-			function(enter) {
-				return enter.append("rect")
-				//.style("opacity", 1);
-				.style("opacity", function(d, i) {
-					return  opacityPicker(d); 
-				})
-				
-			},
-			function(update) {
-				return update.style("opacity", function(d, i) {
-					return  opacityPicker(d); 
-				})
-			}
-		)*/
 
 		.attr('height', 30)
 		.attr("rx", "15")
