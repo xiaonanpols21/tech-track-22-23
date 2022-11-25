@@ -6,14 +6,12 @@ import gsap from "gsap";
 const urlParams = new URLSearchParams(window.location.search);
 
 if(urlParams.get('animation') == 'false') {
-	showZeroState();
+	hideZeroState();
 }
 
-function showZeroState() {
+function hideZeroState() {
 	v.zeroBg.classList.add("hidden");
 }
-
-beginAnimation();
 
 function beginAnimation() {
 	// Zero state
@@ -59,9 +57,8 @@ function beginAnimation() {
 			duration: 1
 		}
 	);
-
-	v.audio.pause();
 };
+beginAnimation();
 
 // Reversed bron: https://codepen.io/PointC/pen/WqKyye?editors=0010
 v.gBtn.to("header button", {
@@ -75,3 +72,4 @@ function dgsap() {
 	v.gBtn.reversed(!v.gBtn.reversed());
 };
 v.darkBtn.addEventListener("click", dgsap);
+
