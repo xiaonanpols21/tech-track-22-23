@@ -2,12 +2,13 @@ import "../styles/style.scss";
 
 // Import JS files
 import * as v from "./variables.js"; 
+import * as d from "./d3-main.js"; 
 import * as func from "./functions.js"; 
 import * as gsap from "./gsap.js"; 
 import * as zero from "./zeroGone.js"; 
 
 import * as d3 from 'd3';
-import { html, thresholdScott } from 'd3';
+import { cross, html, thresholdScott } from 'd3';
 
 // Fetch data, Stackoverflow https://stackoverflow.com/questions/31710768/how-can-i-fetch-an-array-of-urls-with-promise-all
 Promise.all(v.urls.map(u=>fetch(u))).then(responses =>
@@ -28,8 +29,28 @@ Promise.all(v.urls.map(u=>fetch(u))).then(responses =>
 	}
 	console.log(order(albums));
 
-	console.log(data);
+	// Tel hoeveel albums er zijn van welk jaar
+	// Bron: https://stackoverflow.com/questions/51067921/javascript-count-key-value-pairs
+	const countObj = {}
+	for(const album of albums) {
+		if(album.date.year in countObj) {
+			countObj[album.date.year] = countObj[album.date.year] + 1;
+		} else {
+			countObj[album.date.year] = 1;
+		}
+	};
+
+	const countAlbum = []
+	Object.keys(countObj).forEach(year => {
+		countAlbum.push({
+			year,
+			count: countObj[year]
+		})
+	});
+	console.log(countAlbum)
+
 	changeData(data, albums);
+	d.countData(countAlbum);
 });
 
 // Show to the HTML
@@ -61,6 +82,5 @@ function changeData(data, albums) {
 		// Web API, insertAdjacentHTML is om het te tonen in de main. Beforeend betekend: Before the end of the element (last child), W3Schools https://www.w3schools.com/jsref/met_node_insertadjacenthtml.asp
 		
 		func.addEvents(html);
-		
 	});
 };

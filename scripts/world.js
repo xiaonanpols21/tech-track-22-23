@@ -2,7 +2,7 @@ import '../styles/style.scss'
 
 // Import JS files
 import * as v from "./variables.js"; 
-import * as d from "./d3.js"; 
+import * as d from "./d3-world.js"; 
 
 import gsap from "gsap";
 
