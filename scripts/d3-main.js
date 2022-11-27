@@ -22,36 +22,38 @@ function countData(countAlbum) {
 			return "#8CC5FC";
 		}
 	}
-
-	function opacityPicker(d) {
-		if (d.count <= 2) {
-			return "0";
-		} else if (d.count > 2) {
-			return "0";
-		}
-	}
-
 	// Bron: https://codepen.io/bluelegion/pen/EyJyvx?editors=0010
 
-	function update(countAlbum) {
+	function update(countAlbum, buttonPressed, whichBtn) {
+
+		let newData;
+
+		console.log('before');
+		console.log(countAlbum)
+		console.log(buttonPressed)
+		
+		if(buttonPressed) {
+			if(whichBtn == 1) {
+				newData = countAlbum.filter(d => {
+					return d.count <= 2
+				})
+			} else {
+				newData = countAlbum.filter(d => {
+					return d.count > 2
+				})
+			}
+		} else {
+			newData = countAlbum
+		}
+
+		console.log('after');
+		console.log(newData)
+
 		d3.select('.bars')
 		.selectAll('rect')
-		.data(countAlbum)
+		.data(newData)
 
-		//.join('rect')
-		.join(
-			function(enter) {
-				return enter.append("rect")
-				.style("opacity", 1);
-				
-			},
-			function(update) {
-				return update.style("opacity", 0);
-			},
-			function(exit) {
-				return exit.remove();
-			}
-		)
+		.join("rect")
 
 		.attr('height', 30)
 		.attr("rx", "15")
@@ -93,16 +95,13 @@ function countData(countAlbum) {
 		;
 	}
 
-	function updateAll() {
-		update(countAlbum);
-	};
-	updateAll();
+	update(countAlbum);
 
-	d3.select(".btn-test")
-		.on("click", updateAll);
+	d3.selectAll(".filter-btn")
+	.on("click", (e) => {
+		update(countAlbum, true, e.target.value);
+	});
 	// Bron: https://codepen.io/pen
-	
-	//update(countAlbum);
 
 	// Lagenda
 	d3.select(".legenda-1")
