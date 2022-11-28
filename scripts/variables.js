@@ -1,7 +1,7 @@
 import gsap from "gsap";
 
 // Data
-const urls = ["./data/bts-albums.json", "./data/bts-overview.json"];
+const urls = ["./assets/data/bts-albums.json", "./assets/data/bts-overview.json"];
 
 // Dark Mode
 const darkBtn = document.querySelector("header button");
