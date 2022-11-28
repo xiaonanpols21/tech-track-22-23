@@ -27,7 +27,6 @@ const audio = document.querySelector("audio");
 
 // Barchart
 const barBtn = document.querySelector("#bar-btn");
-const crossBtn = document.querySelector("#cross-btn");
 const barSec = document.querySelector(".barchart");
 
 // Gsap
@@ -49,7 +48,6 @@ export {
   showBtn,
   audio,
   barBtn,
-  crossBtn,
   barSec,
   gBtn,
 };
