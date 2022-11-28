@@ -47,7 +47,10 @@ function changeData(country) {
         // TODO: es6
     )
 
-    .on("mouseout", (e) => d3.select(".tooltip").style("opacity", 0));
+    .on("mouseout", (e) => 
+      d3.
+        select(".tooltip")
+        .style("opacity", 0));
   // Bron: https://codepen.io/vijnv/pen/RwJKBeO?editors=1010
 
   // Id
