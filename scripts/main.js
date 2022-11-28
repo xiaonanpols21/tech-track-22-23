@@ -22,7 +22,7 @@ Promise.all(v.urls.map((u) => fetch(u)))
 
     // Sort from debut to present, Freecodecamp
     function order(albums) {
-      return albums.sort(function (a, b) {
+      return albums.sort( (a, b) => {
         return a === b ? 0 : a < b ? 1 : -1;
       });
     }

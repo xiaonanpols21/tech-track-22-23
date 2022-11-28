@@ -72,7 +72,12 @@ function countData(countAlbum) {
           .style("top", e.pageY - 20 + "px")
       )
 
-      .on("mouseout", (e) => d3.select(".tooltipI").style("opacity", 0));
+      .on("mouseout", (e) => 
+        d3
+          .select(".tooltipI")
+          .style("opacity", 0)
+      );
+
     d3.select(".labels")
       .selectAll("text")
       .data(countAlbum)
