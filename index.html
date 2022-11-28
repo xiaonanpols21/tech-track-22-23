@@ -1,85 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8" />
-	<link rel="icon" type="image/svg+xml" href="/favicon.png" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>BTS Albums Timeline</title>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BTS Albums Timeline</title>
 
-	<!-- Google font -->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;700&display=swap" rel="stylesheet">
-</head>
-<body>
-	<header>
-		<h1>Bangtan</h1>
-		<p>Followers: <a>123</a></p>
-		<p>Monthly listeners: <a>456</a></p>
-		<img src="images/fallback.jpg" alt="BTS logo">
-		<a class="world" href="world.html"><i class="fa-solid fa-earth-asia"></i></a>
-		<button><i class="fa-solid fa-circle-half-stroke"></i></button>
-	</header>
-	<main>
-	</main>
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Bangtan</h1>
+      <p>Followers: <a>123</a></p>
+      <p>Monthly listeners: <a>456</a></p>
+      <img src="images/fallback.jpg" alt="BTS logo" />
+      <a class="world" href="world.html"
+        ><i class="fa-solid fa-earth-asia"></i
+      ></a>
+      <button><i class="fa-solid fa-circle-half-stroke"></i></button>
+    </header>
+    <main></main>
 
-	<button class="arrow"><i class="fa-solid fa-arrow-right-long"></i></button>
-	
-	<nav>
-		<button class="btn active" value="all">All</button>
-		<button class="btn" value="2013">2013</button>
-		<button class="btn" value="2014">2014</button>
-		<button class="btn" value="2015">2015</button>
-		<button class="btn" value="2016">2016</button>
-		<button class="btn" value="2017">2017</button>
-		<button class="btn" value="2018">2018</button>
-		<button class="btn" value="2019">2019</button>
-		<button class="btn" value="2020">2020</button>
-		<button class="btn" value="2021">2021</button>
-		<button class="btn" value="2022">2022</button>
-	</nav>
+    <button class="arrow"><i class="fa-solid fa-arrow-right-long"></i></button>
 
-	<button class="bar-btn" id="bar-btn"><i class="fa-solid fa-chart-bar"></i></button>
-	<button class="bar-btn" id="cross-btn"><i class="fa-solid fa-xmark"></i></button>
+    <nav>
+      <button class="btn active" value="all">All</button>
+      <button class="btn" value="2013">2013</button>
+      <button class="btn" value="2014">2014</button>
+      <button class="btn" value="2015">2015</button>
+      <button class="btn" value="2016">2016</button>
+      <button class="btn" value="2017">2017</button>
+      <button class="btn" value="2018">2018</button>
+      <button class="btn" value="2019">2019</button>
+      <button class="btn" value="2020">2020</button>
+      <button class="btn" value="2021">2021</button>
+      <button class="btn" value="2022">2022</button>
+    </nav>
 
-	<!-- Barchart -->
-	<section class="barchart">
-		<div>
-			<svg width="800" height="600">
-				<g class="bars" transform="translate(90, 0)"></g>
-				<g class="labels"></g>
+    <button class="bar-btn" id="bar-btn">
+      <i class="fa-solid fa-chart-bar"></i>
+    </button>
+    <button class="bar-btn" id="cross-btn">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
 
-				<g class="legenda-1"></g>
-				<g class="legenda-2"></g>
-			</svg>
-			<div class="tooltipI"></div>
-			<div>
-				<button value="1" class="filter-btn">2 or less</button>
-				<button value="2" class="filter-btn">more than 2</button>
-			</div>
-		</div>
-	</section>
+    <!-- Barchart -->
+    <section class="barchart">
+      <div>
+        <svg width="800" height="550">
+          <g class="bars" transform="translate(90, 0)"></g>
+          <g class="labels"></g>
 
-	<!-- Zero state -->
-	<section class="zero-state">
-		<div>
-			<img class="zero-img" src="images/fallback.jpg" alt="BTS logo">
-			<button class="play"><img src="images/logo-white.svg" alt="Bts logo"></button>
-			
-			<audio class="visually-hidden" controls autoplay>
-				<source src="audio/bts-123.mp3" type="audio/mpeg">
-			</audio>
-		</div>
-		<section>
-			<h4>BTS</h4>
-			<p>BTS’s debut was in year 2013. Since almost the last decade they’ve worked so hard to be at where they are now. They did not just make 1 album every year when they first started.</p>
-			<p>In this visualization you can see all the albums they’ve made. You can see the timeline in order. You can also filter on year. </p>
-			<p>You can see the top 5 cities of the world who listens the most to BTS. Click on the globe to see it for yourself. </p>
-			<button class="show-timeline">Show timeline</button>
-		</section>
-	</section>
+          <g class="legenda-1"></g>
+          <g class="legenda-2"></g>
+        </svg>
+        <div class="tooltipI"></div>
+        <div>
+          <button value="1" class="filter-btn">2 or less albums</button>
+          <button value="2" class="filter-btn">More than 2 albums</button>
+        </div>
+      </div>
+    </section>
 
-	<script type="module" src="./scripts/main.js"></script>
-	<script src="https://kit.fontawesome.com/c24c386355.js" crossorigin="anonymous"></script>
-</body>
+    <!-- Zero state -->
+    <section class="zero-state">
+      <div>
+        <img class="zero-img" src="images/fallback.jpg" alt="BTS logo" />
+        <button class="play">
+          <img src="images/logo-white.svg" alt="Bts logo" />
+        </button>
+
+        <audio class="visually-hidden" controls>
+          <source src="audio/bts-123.mp3" type="audio/mpeg" />
+        </audio>
+      </div>
+      <section>
+        <h4>BTS</h4>
+        <p>
+          BTS’s debut was in year 2013. Since almost the last decade they’ve
+          worked so hard to be at where they are now. They did not just make 1
+          album every year when they first started.
+        </p>
+        <p>
+          In this visualization you can see all the albums they’ve made. You can
+          see the timeline in order. You can also filter on year.
+        </p>
+        <p>
+          You can see the top 5 cities of the world who listens the most to BTS.
+          Click on the globe to see it for yourself.
+        </p>
+        <button class="show-timeline">Show timeline</button>
+      </section>
+    </section>
+
+    <script type="module" src="./scripts/main.js"></script>
+    <script
+      src="https://kit.fontawesome.com/c24c386355.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

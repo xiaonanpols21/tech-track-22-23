@@ -57,3 +57,31 @@
     color: $white;
     font-size: 20px;
 }
+
+.filter-btn {
+    @include font18;
+    font-family: $font-stack;
+    padding: 10px 20px;
+    border-radius: 50px;
+    background-color: $pink;
+    border: 1px solid $pink;
+    color: $white;
+    transition: .4s;
+    cursor: pointer;
+
+    &:hover {
+        background-color: transparent;
+        color: $pink;
+    }
+
+    &:last-of-type {
+        background-color: $blue;
+        border: 1px solid $blue;
+        margin-left: 20px;
+
+        &:hover {
+            background-color: transparent;
+            color: $blue;
+        }
+    }
+}

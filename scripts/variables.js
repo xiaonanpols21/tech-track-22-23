@@ -1,7 +1,7 @@
 import gsap from "gsap";
 
 // Data
-const urls = ['./data/bts-albums.json', './data/bts-overview.json'];
+const urls = ["./data/bts-albums.json", "./data/bts-overview.json"];
 
 // Dark Mode
 const darkBtn = document.querySelector("header button");
@@ -9,7 +9,7 @@ const body = document.querySelector("body");
 
 // Change to data
 // Header
-const profilePic = document.querySelector("header img")
+const profilePic = document.querySelector("header img");
 const bandName = document.querySelector("h1");
 const followers = document.querySelector("header p:first-of-type a");
 const listeners = document.querySelector("header p:last-of-type a");
@@ -27,36 +27,29 @@ const audio = document.querySelector("audio");
 
 // Barchart
 const barBtn = document.querySelector("#bar-btn");
-const crossBtn = document.querySelector("#cross-btn")
+const crossBtn = document.querySelector("#cross-btn");
 const barSec = document.querySelector(".barchart");
 
 // Gsap
 const gBtn = gsap.timeline();
 
 export {
-
-    urls,
-
-    darkBtn,
-    body,
-
-    profilePic,
-    bandName,
-    followers,
-    listeners,
-
-    main,
-    buttons,
-    firstBtn,
-
-    zeroBg,
-    zeroImg,
-    showBtn,
-    audio,
-
-    barBtn,
-    crossBtn,
-    barSec,
-
-    gBtn
+  urls,
+  darkBtn,
+  body,
+  profilePic,
+  bandName,
+  followers,
+  listeners,
+  main,
+  buttons,
+  firstBtn,
+  zeroBg,
+  zeroImg,
+  showBtn,
+  audio,
+  barBtn,
+  crossBtn,
+  barSec,
+  gBtn,
 };
