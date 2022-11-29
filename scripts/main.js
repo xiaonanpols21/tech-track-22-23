@@ -25,7 +25,7 @@ Promise.all(v.urls.map((u) => fetch(u)))
       return albums.sort( (a, b) => {
         return a === b ? 0 : a < b ? 1 : -1;
       });
-    }
+    };
 
     // Tel hoeveel albums er zijn van welk jaar
     // Bron: https://stackoverflow.com/questions/51067921/javascript-count-key-value-pairs
@@ -36,7 +36,7 @@ Promise.all(v.urls.map((u) => fetch(u)))
       } else {
         countObj[album.date.year] = 1;
       }
-    }
+    };
 
     const countAlbum = [];
     Object.keys(countObj).forEach((year) => {

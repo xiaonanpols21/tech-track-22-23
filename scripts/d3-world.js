@@ -32,7 +32,6 @@ function changeData(country) {
         .replace(",", ".");
       d3.select(".tooltip")
         .html(`<strong>${data.city}:</strong> ${prettyNumber}`)
-
         .transition()
         .duration(200)
         .style("opacity", 1)
@@ -44,7 +43,7 @@ function changeData(country) {
         .select(".tooltip")
         .style("left", e.pageX + -0 + "px")
         .style("top", e.pageY + -120 + "px")
-        // TODO: es6
+        // TODO: fix this
     )
 
     .on("mouseout", (e) => 
@@ -57,7 +56,6 @@ function changeData(country) {
   d3.select(".ranking")
     .selectAll("text")
     .data(country)
-
     .join("text")
     .style("font-size", "23px")
     .style("fill", "white")

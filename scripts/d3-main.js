@@ -70,6 +70,7 @@ function countData(countAlbum) {
           .select(".tooltipI")
           .style("left", e.pageX - 250 + "px")
           .style("top", e.pageY - 20 + "px")
+          //TODO: fix this
       )
 
       .on("mouseout", (e) => 
@@ -83,6 +84,7 @@ function countData(countAlbum) {
       .data(countAlbum)
       .join("text")
       .attr("y", (d) => yScale(d.year) + 15)
+      //TODO: Fix this
       .text((d) => d.year);
   }
 
