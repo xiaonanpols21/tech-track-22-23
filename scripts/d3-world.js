@@ -10,8 +10,8 @@ function changeData(country) {
     .join("circle")
     .attr("r", 5)
     .style("fill", "#862A43")
-    .attr("cx", (country) => country.x)
-    .attr("cy", (country) => country.y);
+    .attr("cx", country => country.x)
+    .attr("cy", country => country.y);
   // Bron: https://www.dashingd3js.com/d3-tutorial/using-the-svg-coordinate-space-with-d3-js
 
   // Ranking
@@ -22,23 +22,23 @@ function changeData(country) {
     .attr("r", 20)
     .style("fill", "#862A43")
     .attr("transform", "translate( -10, -30)")
-    .attr("cx", (country) => country.x)
-    .attr("cy", (country) => country.y)
+    .attr("cx", country => country.x)
+    .attr("cy", country => country.y)
     // Bron: https://www.dashingd3js.com/d3-tutorial/using-the-svg-coordinate-space-with-d3-js
 
-    .on("mouseover", (e, data) => {
+    .on("mouseover", (e, d) => {
       const prettyNumber = d3
-        .format(",")(data.numberOfListeners)
+        .format(",")(d.numberOfListeners)
         .replace(",", ".");
       d3.select(".tooltip")
-        .html(`<strong>${data.city}:</strong> ${prettyNumber}`)
+        .html(`<strong>${d.city}:</strong> ${prettyNumber}`)
         .transition()
         .duration(200)
         .style("opacity", 1)
         .style("font-size", "20px");
     })
 
-    .on("mousemove", (e) =>
+    .on("mousemove", e =>
       d3
         .select(".tooltip")
         .style("left", e.pageX + -0 + "px")
@@ -46,7 +46,7 @@ function changeData(country) {
         // TODO: fix this
     )
 
-    .on("mouseout", (e) => 
+    .on("mouseout", e => 
       d3.
         select(".tooltip")
         .style("opacity", 0));
@@ -61,9 +61,9 @@ function changeData(country) {
     .style("fill", "white")
     .style("font-weight", "bold")
     .attr("transform", "translate( -16, -22)")
-    .text((country) => country.id)
-    .attr("x", (country) => country.x)
-    .attr("y", (country) => country.y);
+    .text(country => country.id)
+    .attr("x", country => country.x)
+    .attr("y", country => country.y);
 }
 
 export { changeData };

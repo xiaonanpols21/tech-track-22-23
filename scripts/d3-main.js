@@ -7,12 +7,12 @@ function countData(countAlbum) {
 
   const xScale = d3
     .scaleLinear()
-    .domain([0, d3.max(countAlbum, (d) => d.count)])
+    .domain([0, d3.max(countAlbum, d => d.count)])
     .range([0, chartWidth]);
 
   const yScale = d3
     .scaleBand()
-    .domain(d3.map(countAlbum, (d) => d.year))
+    .domain(d3.map(countAlbum, d => d.year))
     .range([0, chartHeight])
     .paddingInner(0.05);
 
@@ -30,13 +30,9 @@ function countData(countAlbum) {
     let newData;
     if (buttonPressed) {
       if (whichBtn == 1) {
-        newData = countAlbum.filter(d => 
-          d.count <= 2
-        );
+        newData = countAlbum.filter(d => d.count <= 2);
       } else {
-        newData = countAlbum.filter(d => 
-          d.count > 2
-        );
+        newData = countAlbum.filter(d => d.count > 2);
       }
     } else {
       newData = countAlbum;
@@ -85,13 +81,13 @@ function countData(countAlbum) {
       .join("text")
       .attr("y", (d) => yScale(d.year) + 15)
       //TODO: Fix this
-      .text((d) => d.year);
+      .text(d => d.year);
   }
 
   update(countAlbum);
 
   d3.selectAll(".filter-btn")
-  .on("click", (e) => {
+  .on("click", e => {
     update(countAlbum, true, e.target.value);
   });
   // Bron: https://codepen.io/pen

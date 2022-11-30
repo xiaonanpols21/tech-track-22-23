@@ -48,18 +48,18 @@ const dataSet = [
 ];
 
 // Fetch data, Stackoverflow https://stackoverflow.com/questions/31710768/how-can-i-fetch-an-array-of-urls-with-promise-all
-Promise.all(v.urls.map((u) => fetch(u)))
-  .then((responses) => Promise.all(responses.map((res) => res.json())))
-  .then((data) => {
+Promise.all(v.urls.map(u => fetch(u)))
+  .then(responses => Promise.all(responses.map((res) => res.json())))
+  .then(data => {
     // Get only countries of the full dataset
     const country = data[1].data.artist.stats.topCities.items.map((item) => {
       return item;
     });
 
     //Add dataSet to country dataset
-    country.map((e) => {
+    country.map(e => {
       console.log(e.city);
-      const cityLocation = dataSet.filter((d) => d.city === e.city);
+      const cityLocation = dataSet.filter(d => d.city === e.city);
 
       e.x = cityLocation[0].x;
       e.y = cityLocation[0].y;

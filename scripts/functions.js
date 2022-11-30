@@ -12,13 +12,13 @@ function filter(e) {
   });
 }
 
-v.buttons.forEach((button) => {
+v.buttons.forEach(button => {
   button.addEventListener("click", filter);
 });
 
 function filterAll() {
   const allArticle = document.querySelectorAll("article");
-  allArticle.forEach((item) => {
+  allArticle.forEach(item => {
     item.classList.remove("hidden");
   });
 }
@@ -28,7 +28,7 @@ v.firstBtn.addEventListener("click", filterAll);
 // Filter voor knoppen https://www.youtube.com/watch?v=OeMuUKedtPc&ab_channel=CodingNepal
 const filterItem = document.querySelector("nav");
 window.onload = () => {
-  filterItem.onclick = (selectedItem) => {
+  filterItem.onclick = selectedItem => {
     if (selectedItem.target.classList.contains("btn")) {
       filterItem.querySelector(".active").classList.remove("active");
       selectedItem.target.classList.add("active");
@@ -41,7 +41,7 @@ function addEvents(element) {
   const cards = document.querySelectorAll(".card");
   const observer = new IntersectionObserver(
     (entries) => {
-      entries.forEach((entry) => {
+      entries.forEach(entry => {
         entry.target.classList.toggle("show", entry.isIntersecting);
       });
     },
@@ -50,7 +50,7 @@ function addEvents(element) {
     }
   );
 
-  cards.forEach((card) => {
+  cards.forEach(card => {
     observer.observe(card);
   });
 }

@@ -11,12 +11,12 @@ import * as d3 from "d3";
 import { cross, html, thresholdScott } from "d3";
 
 // Fetch data, Stackoverflow https://stackoverflow.com/questions/31710768/how-can-i-fetch-an-array-of-urls-with-promise-all
-Promise.all(v.urls.map((u) => fetch(u)))
-  .then((responses) => Promise.all(responses.map((res) => res.json())))
-  .then((data) => {
+Promise.all(v.urls.map(u => fetch(u)))
+  .then(responses => Promise.all(responses.map((res) => res.json())))
+  .then(data => {
     // Make new array from only the Albums
     const albums = [];
-    data[0].data.artist.discography.albums.items.forEach((item) => {
+    data[0].data.artist.discography.albums.items.forEach(item => {
       albums.push(item.releases.items[0]);
     });
 
@@ -39,7 +39,7 @@ Promise.all(v.urls.map((u) => fetch(u)))
     };
 
     const countAlbum = [];
-    Object.keys(countObj).forEach((year) => {
+    Object.keys(countObj).forEach(year => {
       countAlbum.push({
         year,
         count: countObj[year],
@@ -56,14 +56,13 @@ function changeData(data, albums) {
   v.bandName.textContent = data[1].data.artist.profile.name;
   v.followers.textContent = data[1].data.artist.stats.followers;
   v.listeners.textContent = data[1].data.artist.stats.monthlyListeners;
-  v.profilePic.src =
-    data[1].data.artist.visuals.gallery.items[0].sources[0].url;
+  v.profilePic.src = data[1].data.artist.visuals.gallery.items[0].sources[0].url;
 
   // Zero state
   v.zeroImg.src = data[1].data.artist.visuals.gallery.items[1].sources[0].url;
 
   // ForEach Albums
-  albums.forEach((item) => {
+  albums.forEach(item => {
     const albumImg = item.coverArt.sources[2].url;
     const year = item.date.year;
     const name = item.name;
