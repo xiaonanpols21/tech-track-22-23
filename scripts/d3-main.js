@@ -30,13 +30,13 @@ function countData(countAlbum) {
     let newData;
     if (buttonPressed) {
       if (whichBtn == 1) {
-        newData = countAlbum.filter((d) => {
-          return d.count <= 2;
-        });
+        newData = countAlbum.filter(d => 
+          d.count <= 2
+        );
       } else {
-        newData = countAlbum.filter((d) => {
-          return d.count > 2;
-        });
+        newData = countAlbum.filter(d => 
+          d.count > 2
+        );
       }
     } else {
       newData = countAlbum;
@@ -48,12 +48,12 @@ function countData(countAlbum) {
       .join("rect")
       .attr("height", 30)
       .attr("rx", "15")
-      .style("fill", (d, i) => {
-        return colorPicker(d);
-      })
+      .style("fill", d => 
+        colorPicker(d)
+      )
 
-      .attr("width", (d) => xScale(d.count))
-      .attr("y", (d) => yScale(d.year))
+      .attr("width", d => xScale(d.count))
+      .attr("y", d => yScale(d.year))
 
       // Hove effect tooltip
       .on("mouseover touchstart", (e, d) =>
@@ -72,7 +72,7 @@ function countData(countAlbum) {
           .style("top", e.pageY - 20 + "px")
           //TODO: fix this
       )
-
+      
       .on("mouseout", (e) => 
         d3
           .select(".tooltipI")
