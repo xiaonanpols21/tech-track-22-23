@@ -64,9 +64,8 @@ function countData(countAlbum) {
       .on("mousemove", (e) =>
         d3
           .select(".tooltipI")
-          .style("left", e.pageX - 250 + "px")
-          .style("top", e.pageY - 20 + "px")
-          //TODO: fix this
+          .style("left", `${e.pageX - 250}px`)
+          .style("top", `${e.pageY - 20}px`)
       )
       
       .on("mouseout", (e) => 

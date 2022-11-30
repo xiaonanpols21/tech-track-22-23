@@ -41,9 +41,8 @@ function changeData(country) {
     .on("mousemove", e =>
       d3
         .select(".tooltip")
-        .style("left", e.pageX + -0 + "px")
-        .style("top", e.pageY + -120 + "px")
-        // TODO: fix this
+        .style("left", `${e.pageX + -0}px`)
+        .style("top", `${e.pageY + -120}px`)
     )
 
     .on("mouseout", e => 
