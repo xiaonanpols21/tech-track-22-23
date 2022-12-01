@@ -79,7 +79,6 @@ function countData(countAlbum) {
       .data(countAlbum)
       .join("text")
       .attr("y", (d) => yScale(d.year) + 15)
-      //TODO: Fix this
       .text(d => d.year);
   }
 
