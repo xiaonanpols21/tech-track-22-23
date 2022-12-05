@@ -68,7 +68,8 @@ function changeData(data, albums) {
     const name = item.name;
     const play = item.sharingInfo.shareUrl;
 
-    const html = `<article class="card" data-name="${year}">
+    const html = 
+    `<article class="card" data-name="${year}">
 			<h2>${year}</h2>
 			<h3>${name}</h3>
 			<img src="${albumImg}" alt="${name}">
