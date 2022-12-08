@@ -51,6 +51,7 @@ const dataSet = [
 Promise.all(v.urls.map(u => fetch(u)))
   .then(responses => Promise.all(responses.map((res) => res.json())))
   .then(data => {
+    
     // Get only countries of the full dataset
     const country = data[1].data.artist.stats.topCities.items.map((item) => {
       return item;

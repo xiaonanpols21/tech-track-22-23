@@ -16,6 +16,15 @@ v.buttons.forEach(button => {
   button.addEventListener("click", filter);
 });
 
+
+
+
+
+
+
+
+
+
 function filterAll() {
   const allArticle = document.querySelectorAll("article");
   allArticle.forEach(item => {
