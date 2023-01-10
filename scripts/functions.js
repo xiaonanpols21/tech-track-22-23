@@ -17,14 +17,6 @@ v.buttons.forEach(button => {
 });
 
 
-
-
-
-
-
-
-
-
 function filterAll() {
   const allArticle = document.querySelectorAll("article");
   allArticle.forEach(item => {
